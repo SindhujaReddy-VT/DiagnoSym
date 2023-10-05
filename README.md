@@ -1,4 +1,4 @@
-# DiagnoSym
+# DiagnoSym : Medical Suggestions
 
 Required actions to run the project without errors
 1. Install node js
