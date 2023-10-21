@@ -1,0 +1,32 @@
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #004AAD;
+    color: white;
+}
+
+.copyrights {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.links {
+    width: 60%;
+}
+
+.links ul {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.links li {
+    text-decoration: none;
+}
+
+.social-media-icons {
+    display: flex;
+}

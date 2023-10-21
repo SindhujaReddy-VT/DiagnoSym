@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-
+import Logo from '../logo/logo_v1.png'
 export default function SignUp() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -48,8 +48,10 @@ export default function SignUp() {
     <div className="auth-wrapper">
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
-          <h3>Sign Up</h3>
-          <div>
+        <div className="image-wrapper">
+        <img className="site-logo" alt="site-logo" src= {Logo} />
+        </div>
+          <div className="type-wrapper">
             Register As
             <input
               type="radio"

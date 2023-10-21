@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import Logo from '../logo/logo_v1.png'
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -29,7 +30,7 @@ export default function Login() {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
 
-          window.location.href = "./userDetails";
+          window.location.href = "./home.js";
         }
       });
   }
@@ -38,8 +39,9 @@ export default function Login() {
     <div className="auth-wrapper">
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
-          <h3>Sign In</h3>
-
+          <div className="image-wrapper">
+        <img className="site-logo" alt="site-logo" src= {Logo} />
+        </div>
           <div className="mb-3">
             <label>Email address</label>
             <input
@@ -84,5 +86,6 @@ export default function Login() {
         </form>
       </div>
     </div>
+    
   );
 }
