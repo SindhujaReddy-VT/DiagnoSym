@@ -1,5 +1,4 @@
 import React, { Component, useState } from "react";
-import Logo from '../logo/logo_v1.png'
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,7 +8,7 @@ export default function Login() {
     e.preventDefault();
 
     console.log(email, password);
-    fetch("http://localhost:3000/sign-in/", {
+    fetch("http://127.0.0.1:8000/sign-in/", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -24,12 +23,11 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status === "ok") {
+        if (data.status == "ok") {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
-
-          window.location.href = "./home.js";
+          window.location.href = "./home";
         }
       });
   }
@@ -39,7 +37,6 @@ export default function Login() {
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
           <div className="image-wrapper">
-        <img className="site-logo" alt="site-logo" src= {Logo} />
         </div>
           <div className="mb-3">
             <label>Email address</label>

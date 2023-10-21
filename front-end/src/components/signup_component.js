@@ -1,37 +1,46 @@
 import React, { Component, useState } from "react";
-import Logo from '../logo/logo_v1.png'
+
 export default function SignUp() {
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
+  const [first_name, setFname] = useState("");
+  const [last_name, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
   const [secretKey, setSecretKey] = useState("");
 
   const handleSubmit = (e) => {
-      console.log(fname, lname, email, password);
-      fetch("http://localhost:3000/sign-up/", {
+    if (userType == "Admin" && secretKey != "123") {
+      e.preventDefault();
+      alert("Invalid Admin");
+    } else {
+      e.preventDefault();
+
+      console.log(first_name, last_name, email, password);
+      fetch("http://127.0.0.1:8000/sign-up/", {
         method: "POST",
-        crossDomain: true,
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          fname,
+          first_name,
+          last_name,
           email,
-          lname,
           password,
         }),
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data, "userRegister");
-          if (data.status == "ok") {
-            alert("Registration Successful");
-          } else {
-            alert("Something went wrong");
-          }
-        });
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.status === "Registration Successful") {
+          alert("Registration Successful");
+        } else {
+          alert("Something went wrong");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    }
   };
 
   return (
@@ -39,7 +48,6 @@ export default function SignUp() {
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
         <div className="image-wrapper">
-        <img className="site-logo" alt="site-logo" src= {Logo} />
         </div>
           <div className="type-wrapper">
             Register As
