@@ -1,0 +1,26 @@
+.questionnaire {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .questionnaire h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .questionnaire form {
+    text-align: left;
+  }
+  
+  .questionnaire label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+ 

@@ -1,18 +1,16 @@
-import React, { Component, useState } from "react";
+import React, { useState } from 'react';
+import Logo from '../logo/logo_v3.png';
+import '../css/signup.css';
+import Typewriter from './Typewriter';
 
 export default function SignUp() {
   const [first_name, setFname] = useState("");
   const [last_name, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("");
-  const [secretKey, setSecretKey] = useState("");
 
   const handleSubmit = (e) => {
-    if (userType == "Admin" && secretKey != "123") {
-      e.preventDefault();
-      alert("Invalid Admin");
-    } else {
+
       e.preventDefault();
 
       console.log(first_name, last_name, email, password);
@@ -40,46 +38,24 @@ export default function SignUp() {
       .catch((error) => {
         console.error("Error:", error);
       });
-    }
   };
 
   return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <form onSubmit={handleSubmit}>
-        <div className="image-wrapper">
+    <div className="container">
+      <div className="card">
+        <div className="card-content">
+          <img className="site-logo" alt="site-logo" src={Logo} />
+          <h2 className="title-caption">Discover Your Health Journey with DiagnoSym</h2>
+          <p className="type-write">
+            <Typewriter text="Empower yourself to self-diagnose symptoms, receive precise predictions, connect with specialized doctors, and access personalized health precautions. Your journey to better health begins here with DiagnoSym." />
+          </p>
         </div>
-          <div className="type-wrapper">
-            Register As
-            <input
-              type="radio"
-              name="UserType"
-              value="User"
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            User
-            <input
-              type="radio"
-              name="UserType"
-              value="Admin"
-              onChange={(e) => setUserType(e.target.value)}
-            />
-            Admin
-          </div>
-          {userType == "Admin" ? (
-            <div className="mb-3">
-              <label>Secret Key</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Secret Key"
-                onChange={(e) => setSecretKey(e.target.value)}
-              />
-            </div>
-          ) : null}
-
-          <div className="mb-3">
-            <label>First name</label>
+      </div>
+      <div className="auth-form">
+        <form onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <div className="input-group">
+            <label>First Name</label>
             <input
               type="text"
               className="form-control"
@@ -88,8 +64,8 @@ export default function SignUp() {
             />
           </div>
 
-          <div className="mb-3">
-            <label>Last name</label>
+          <div className="input-group">
+            <label>Last Name</label>
             <input
               type="text"
               className="form-control"
@@ -98,7 +74,7 @@ export default function SignUp() {
             />
           </div>
 
-          <div className="mb-3">
+          <div className="input-group">
             <label>Email address</label>
             <input
               type="email"
@@ -108,7 +84,7 @@ export default function SignUp() {
             />
           </div>
 
-          <div className="mb-3">
+          <div className="input-group">
             <label>Password</label>
             <input
               type="password"

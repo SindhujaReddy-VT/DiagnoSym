@@ -1,4 +1,8 @@
-import React, { Component, useState } from "react";
+import React, {useState } from "react";
+import Logo from '../logo/logo_v3.png'
+import Typewriter from './Typewriter'; // Make sure to adjust the path
+import '../css/login.css';
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,11 +37,19 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <form onSubmit={handleSubmit}>
-          <div className="image-wrapper">
+    <div className="container">
+      <div className="card">
+        <div className="card-content">
+          <img className="site-logo" alt="site-logo" src={Logo} />
+          <h2 className="title-caption">Discover Your Health Journey with DiagnoSym</h2>
+          <p className="type-write">
+            <Typewriter text="Empower yourself to self-diagnose symptoms, receive precise predictions, connect with specialized doctors, and access personalized health precautions. Your journey to better health begins here with DiagnoSym." />
+          </p>
         </div>
+      </div>
+<div className="auth-form">
+        <form onSubmit={handleSubmit}>
+          <h1>Login</h1>
           <div className="mb-3">
             <label>Email address</label>
             <input
@@ -76,7 +88,7 @@ export default function Login() {
               Submit
             </button>
           </div>
-          <p className="forgot-password text-right">
+          <p className="forgot-password text-right">Not registered?
             <a href="/sign-up">Sign Up</a>
           </p>
         </form>
