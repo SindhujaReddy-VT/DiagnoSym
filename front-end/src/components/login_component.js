@@ -9,13 +9,12 @@ export default function Login() {
     e.preventDefault();
 
     console.log(email, password);
-    fetch("http://localhost:3000/login-user", {
+    fetch("http://localhost:3000/sign-in/", {
       method: "POST",
       crossDomain: true,
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         email,
