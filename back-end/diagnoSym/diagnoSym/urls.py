@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("sign-up/", views.register),
     path("sign-in/", views.login),
+    path('api/process_questionnaire/', views.process_questionnaire, name='process_questionnaire'),
 ]

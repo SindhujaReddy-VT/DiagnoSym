@@ -9,11 +9,11 @@ const Footer = () => {
     return (
         <div>
             <footer>
-                <div class="copyrights">
+                <div className="copyrights">
                     <span>&copy; Copyrights</span>
-                    <span>2023 douchecravings</span>
+                    <span>2023 diagnosym</span>
                 </div>
-                <div class="links">
+                <div className="links">
                     <ul>
                         <li>About Us</li>
                         <li>Contact Us</li>
@@ -21,9 +21,9 @@ const Footer = () => {
                         <li>Privacy Policy</li>
                     </ul>
                 </div>
-                <div class="social-media-icons-follow">
+                <div className="social-media-icons-follow">
                     <span>Follow Us on</span>
-                    <div class="social-media-icons">
+                    <div className="social-media-icons">
                         <AiFillGithub />
                         <AiFillYoutube />
                         <RiTwitterXFill />

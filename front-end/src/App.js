@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from "./components/login_component";
 import SignUp from "./components/signup_component";
 import Home from "./components/home";
+import Questionnaire from "./components/questionnaire";
 
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
@@ -14,7 +15,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={isLoggedIn == "true" ? <Login /> : <Login />}
+            element={isLoggedIn === "true" ? <Questionnaire /> : <Questionnaire />}
           />
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />

@@ -46,7 +46,7 @@ header {
     color: #628474;
     text-decoration: none;
 }
-/* Add your styles for the dropdown component */
+
 .dropdown-container {
     position: relative;
   }
@@ -58,7 +58,7 @@ header {
   
   .dropdown {
     position: absolute;
-    top: 40px; /* Adjust the positioning as needed */
+    top: 40px;
     left: 0;
     width: 140px;
     background: #fff;
@@ -84,7 +84,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent; /* Set the background to transparent */
+    background: transparent;
     z-index: 1;
   }
   

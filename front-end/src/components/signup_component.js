@@ -45,7 +45,11 @@ export default function SignUp() {
       <div className="card">
         <div className="card-content">
           <img className="site-logo" alt="site-logo" src={Logo} />
-          <h2 className="title-caption">Discover Your Health Journey with DiagnoSym</h2>
+          <div className="titlee">
+          <h2 className="title-caption">Discover Your Health Journey with DiagnoSYM</h2>
+
+          </div>
+          
           <p className="type-write">
             <Typewriter text="Empower yourself to self-diagnose symptoms, receive precise predictions, connect with specialized doctors, and access personalized health precautions. Your journey to better health begins here with DiagnoSym." />
           </p>

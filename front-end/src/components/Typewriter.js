@@ -12,7 +12,7 @@ const Typewriter = ({ text }) => {
       } else {
         clearInterval(timer);
       }
-    }, 50); // Adjust the typing speed as needed (in milliseconds).
+    }, 50);
 
     return () => {
       clearInterval(timer);

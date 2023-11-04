@@ -3,6 +3,7 @@ from rest_framework import status
 from django.http import JsonResponse
 from .serializers import UserSerializers
 from .models import User
+import json
 
 
 @api_view(['POST'])
@@ -27,3 +28,13 @@ def login(request):
         else:
             return JsonResponse({"message": "Login failed. Invalid credentials.", "status": "fail"},
                                 status=status.HTTP_401_UNAUTHORIZED)
+        
+@api_view(['POST'])
+def process_questionnaire(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        # Process and save the JSON data as needed
+        print(data)
+        return JsonResponse({'message': 'Data received and processed successfully'})
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)

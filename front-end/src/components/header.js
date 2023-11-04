@@ -19,15 +19,15 @@ const Header = () => {
     return (
         <div>
             <header>
-                <div class="logo-title"><img class="logo" src={logo} alt="logo" />
+                <div className="logo-title"><img className="logo" src={logo} alt="logo" />
 
-                    <div class="title">
-                        <h1 class="title-d">D</h1>
-                        <h1 class="title-iagno">iagno</h1>
-                        <h1 class="title-SYM">SYM</h1>
+                    <div className="title">
+                        <h1 className="title-d">D</h1>
+                        <h1 className="title-iagno">iagno</h1>
+                        <h1 className="title-SYM">SYM</h1>
                     </div>
                 </div>
-                <div class="nav-bar">
+                <div className="nav-bar">
                     <ul>
                         <li>Home</li>
                         <li>Questionnaire</li>
