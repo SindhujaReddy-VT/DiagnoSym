@@ -6,6 +6,7 @@ import SignUp from "./components/signup_component";
 import Home from "./components/home";
 import Questionnaire from "./components/questionnaire";
 import UserDetails from './components/userDetails';
+import Prediction from "./components/prediction";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/home" element = {<Home/>} />
           <Route path="/questionnaire" element = {<Questionnaire/>} />
           <Route path="/user-details" element={<UserDetails />} />
+          <Route path="/prediction" element={<Prediction />} />
         </Routes>
       </div>
     </Router>

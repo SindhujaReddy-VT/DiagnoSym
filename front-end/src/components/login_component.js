@@ -5,13 +5,13 @@ import '../css/login.css';
 
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(email, password);
+    console.log(username, password);
     fetch("http://127.0.0.1:8000/sign-in/", {
       method: "POST",
       crossDomain: true,
@@ -20,7 +20,7 @@ export default function Login() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        email,
+        username,
         password,
       }),
     })
@@ -31,7 +31,7 @@ export default function Login() {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
-          window.localStorage.setItem("email", email );
+          window.localStorage.setItem("username", username );
           window.location.href = "./home";
         }
       });
@@ -52,12 +52,12 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
           <div className="mb-3">
-            <label>Email address</label>
+            <label>username</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
-              placeholder="Enter email"
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter username"
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 

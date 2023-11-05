@@ -13,29 +13,31 @@ import results from '../images/results.png';
 import our_process from '../images/our_process.png';
 
 
-// const images = [
-//   slide1, slide2
-// ]; // Replace with your image file paths
 
-// 
-//   const [currentSlide, setCurrentSlide] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       // Increment the current slide, and loop back to the first slide if at the end
-//       setCurrentSlide((currentSlide + 1) % images.length);
-//     }, 3000); // Change the interval (in milliseconds) to control the slideshow speed
-
-//     return () => {
-//       // Clean up the interval when the component unmounts
-//       clearInterval(interval);
-//     };
-//   }, [currentSlide]);
 const Home = () => {
+  const images = [
+    slide1, slide2
+  ]; // Replace with your image file paths
+  
+  
+    const [currentSlide, setCurrentSlide] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        // Increment the current slide, and loop back to the first slide if at the end
+        setCurrentSlide((currentSlide + 1) % images.length);
+      }, 3000); // Change the interval (in milliseconds) to control the slideshow speed
+  
+      return () => {
+        // Clean up the interval when the component unmounts
+        clearInterval(interval);
+      };
+    }, [currentSlide]);
+
   return (
     <div>
       <Header />
-      {/* <div className="slideshow">
+      <div className="slideshow">
         {images.map((image, index) => (
           <img
             key={index}
@@ -44,9 +46,9 @@ const Home = () => {
             className={index === currentSlide ? 'active' : ''}
           />
         ))}
-      </div> */}
+      </div>
 
-      {/* <div class="services">
+      <div class="services">
         <h3 class="title-services">Services and Solutions</h3>
         <div class="grid-services">
           <div class="item">
@@ -82,7 +84,7 @@ const Home = () => {
             <span class="box-text">Our App users can always view or discard their latest diagnosis records</span>
           </div>
         </div>
-      </div> */}
+      </div>
       <div class="our-process">
         <div class="rectangle">
           <div class="process-text">

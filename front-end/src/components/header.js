@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import '../css/header.css'
 import logo from '../logo/logo_v1.png'
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -8,6 +8,11 @@ import { IoMdHelpCircle } from 'react-icons/io';
 import { FaSignOutAlt } from 'react-icons/fa';
 
 const Header = () => {
+  const navigate = useNavigate(); 
+  const handleSignOut = () => {
+    localStorage.clear();
+    navigate('/sign-in'); 
+  };
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleHamburgerClick = () => {
@@ -52,7 +57,7 @@ const Header = () => {
                 <li>
                   <IoMdHelpCircle /> Help
                 </li>
-                <li>
+                <li onClick={handleSignOut}>
                   <FaSignOutAlt /> Sign Out
                 </li>
               </ul>

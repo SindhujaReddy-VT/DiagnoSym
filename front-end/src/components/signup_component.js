@@ -7,13 +7,15 @@ export default function SignUp() {
   const [first_name, setFname] = useState("");
   const [last_name, setLname] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUname] = useState("");
+  const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
 
       e.preventDefault();
 
-      console.log(first_name, last_name, email, password);
+      console.log(first_name, last_name, email, password, username, gender);
       fetch("http://127.0.0.1:8000/sign-up/", {
         method: "POST",
         headers: {
@@ -24,6 +26,8 @@ export default function SignUp() {
           last_name,
           email,
           password,
+          username,
+          gender
         }),
       })
       .then((response) => response.json())
@@ -76,6 +80,30 @@ export default function SignUp() {
               placeholder="Last name"
               onChange={(e) => setLname(e.target.value)}
             />
+          </div>
+
+          <div className="input-group">
+            <label>Username</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Username"
+              onChange={(e) => setUname(e.target.value)}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="gender">Gender:</label>
+            <select
+              className="form-control"
+              id="gender"
+              name="gender"
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
           <div className="input-group">

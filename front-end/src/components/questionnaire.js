@@ -11,7 +11,7 @@ const Questionnaire = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const responseFormData = {
-            user : window.localStorage.getItem("email") || '',
+            user : window.localStorage.getItem("username") || '',
             fatigue_radio: formData.fatigue_radio,
             swollen_neck_radio: formData.swollen_neck_radio,
             muscle_pain_radio: formData.muscle_pain_radio,
