@@ -1,8 +1,8 @@
-import React, {useState } from "react";
-import Logo from '../logo/logo_v3.png'
-import Typewriter from './Typewriter'; // Make sure to adjust the path
+import React, { useState } from "react";
 import '../css/login.css';
-
+import Header2 from '../components/header_plain';
+import Footer from '../components/footer';
+import Bgimage from '../images/ls.png';
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -27,74 +27,74 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status == "ok") {
+        if (data.status === "ok") {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
-          window.localStorage.setItem("username", username );
+          window.localStorage.setItem("username", username);
           window.location.href = "./home";
         }
       });
   }
 
   return (
-    <div className="container">
-      <div className="card">
-        <div className="card-content">
-          <img className="site-logo" alt="site-logo" src={Logo} />
-          <h2 className="title-caption">Discover Your Health Journey with DiagnoSym</h2>
-          <p className="type-write">
-            <Typewriter text="Empower yourself to self-diagnose symptoms, receive precise predictions, connect with specialized doctors, and access personalized health precautions. Your journey to better health begins here with DiagnoSym." />
-          </p>
+    <div className="whole-container"
+      style={{
+        backgroundImage: `url(${Bgimage})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <Header2 />
+      <div className="main-container">
+        <div className="login-container">
+          <div className="auth-form">
+            <form onSubmit={handleSubmit}>
+              <h1 className="login-header">Login</h1>
+              <div className="form-group">
+                <label htmlFor="username" className="input-label">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  className="form-control"
+                  placeholder="Enter username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="password" className="input-label">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  className="form-control"
+                  placeholder="Enter password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group custom-checkbox">
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  id="customCheck1"
+                />
+                <label className="custom-control-label-1" htmlFor="customCheck1">
+                  Remember me
+                </label>
+              </div>
+
+              <div className="d-grid">
+                <button type="submit" className="btn login-button">
+                  Submit
+                </button>
+              </div>
+              <p className="forgot-password text-right">Not registered? <a href="/sign-up">Sign Up</a></p>
+            </form>
+          </div>
         </div>
       </div>
-<div className="auth-form">
-        <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <div className="mb-3">
-            <label>username</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter username"
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-3">
-            <div className="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                className="custom-control-input"
-                id="customCheck1"
-              />
-              <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
-              </label>
-            </div>
-          </div>
-
-          <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-          <p className="forgot-password text-right">Not registered?
-            <a href="/sign-up">Sign Up</a>
-          </p>
-        </form>
-      </div>
+      <Footer />
     </div>
-    
   );
 }

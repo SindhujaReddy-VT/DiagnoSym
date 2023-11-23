@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 class User(models.Model):
     first_name = models.CharField(max_length=60)
@@ -7,6 +8,7 @@ class User(models.Model):
     gender = models.CharField(max_length=15)
     username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=60)
+    date_of_birth = models.DateField(default=date(2000, 1, 1))
 
 class Symptoms(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) 

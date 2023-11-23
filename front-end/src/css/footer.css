@@ -1,18 +1,19 @@
 footer {
     display: flex;
     justify-content: space-evenly;
-    background-color: #004AAD;
+    background-color: #630031;
     color: white;
 }
 
 .copyrights {
     display: flex;
     flex-direction: column;
-    padding-left: 1rem;
+    padding: 0.875rem;
 }
 
 .links {
     width: 60%;
+    padding-top: 0.875rem;
 }
 
 .links ul {
@@ -29,4 +30,9 @@ footer {
 
 .social-media-icons {
     display: flex;
+    gap: 1em;
+    
+}
+.social-media-icons-follow{
+    padding: 0.875rem;
 }

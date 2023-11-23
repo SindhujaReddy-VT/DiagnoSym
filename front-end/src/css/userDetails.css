@@ -1,43 +1,148 @@
-.parent{ 
-    display: flex;
-    flex-direction:row ; 
-  } 
-.part1{
-   
-    text-align: center;
-    width: 30%;
-    background-color:#D9D9D9;
-    padding: 10px;
-    border-radius: 2px;
+/* userDetails.css */
+
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 600;
     
-    display: inline-block;
-}
-.container{
-    width: 68%;
-    float: right;
-    background-color:#D9D9D9;
-    padding: 1rem;
-}
-
-.uploadimg{
-    align-items: center;
+  }
+  
+  /* Container for the profile picture and account details */
+  .parent {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    
+  }
+  
+  /* Profile Picture section */
+  .part1 {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 5px;
-}
-.profilepic{
-    height: 200px;
+    color:black;
+  }
+  
+  .header1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    
+  }
+  
+  .profilepic {
+    max-width: 50%;
+    height: auto;
     border-radius: 50%;
-}
-.file-upload{
+  }
+  
+  .custom-file {
+    margin:1rem;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .custom-file-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
+  
+  .file-upload {
+    background-color: #630031 ;
+    color: #fff;
     cursor: pointer;
-    margin: 0.5rem 0;
-}
-.header1{
-    border-bottom: 1px solid #FFFFFF;
-    padding: 0.5rem;
-}
-.header2{
-    border-bottom: 1px solid #FFFFFF;
-    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    width:fit-content;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Account Details section */
+  .container {
+    width: 55%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  .header2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color:black;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
 
-}
+  .form-control {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-row-profile label{
+    color: black;
+  }
+  .form-row-profile {
+    display: flex;
+    justify-content: space-between;
+  }
+  .row{
+    display: flex;
+    justify-content: center;
+  }
+  .form-group.col-md-6 {
+    flex-basis: 48%;
+  }
+  
+  select.form-control {
+    height: 38px;
+  }
+  
+  button.btn {
+    background-color: #630031;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .disabled-input {
+    background-color: #f8f9fa; /* Light gray background for disabled input */
+    cursor: not-allowed;
+  }
+  

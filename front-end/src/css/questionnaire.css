@@ -1,26 +1,111 @@
+/* App.css (or your preferred CSS file) */
 .questionnaire {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
-    text-align: center;
-  }
-  
-  .questionnaire h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .questionnaire form {
-    text-align: left;
-  }
-  
-  .questionnaire label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
- 
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.questions {
+  display: flex;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 10px;
+}
+
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  border: 2px solid #630031;
+}
+
+.question-list li {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  color:black;
+}
+
+.question-list li.selected {
+  background-color: #630031;
+  color: #fff;
+}
+
+.content {
+  width: 70%;
+  padding: 10px;
+}
+
+.question {
+  max-width: 500px;
+  max-height: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #630031;
+  margin:10rem;
+  color: black;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color:black;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  background-color: #630031;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #630031;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-group {
+  margin: 4px;
+  padding: 4px;
+  width: 200px;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.question-list {
+  margin: 4px, 4px;
+  padding: 4px;
+  width: 300px;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+}
+.button-form{
+  background-color: #630031;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}

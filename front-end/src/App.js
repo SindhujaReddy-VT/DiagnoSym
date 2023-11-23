@@ -6,7 +6,10 @@ import SignUp from "./components/signup_component";
 import Home from "./components/home";
 import Questionnaire from "./components/questionnaire";
 import UserDetails from './components/userDetails';
+import Precautions from './components/precautions';
 import Prediction from "./components/prediction";
+import Feedback from "./components/feedback";
+import Main from "./components/main";
 
 
 function App() {
@@ -26,7 +29,10 @@ function App() {
           <Route path="/home" element = {<Home/>} />
           <Route path="/questionnaire" element = {<Questionnaire/>} />
           <Route path="/user-details" element={<UserDetails />} />
+          <Route path="/precautions" element={<Precautions />} />
           <Route path="/prediction" element={<Prediction />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/main" element={<Main />} />
         </Routes>
       </div>
     </Router>

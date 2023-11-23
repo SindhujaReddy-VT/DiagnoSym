@@ -3,7 +3,7 @@ import '../css/home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import slide1 from '../images/slideimg4.webp';
-import slide2 from '../images/slideshow2.png';
+import slide2 from '../images/slideimage4.jpeg';
 import doctors from '../images/doctors.png';
 import past_records from '../images/past_records.png';
 import precautions from '../images/precautions.png';
@@ -32,7 +32,7 @@ const Home = () => {
         // Clean up the interval when the component unmounts
         clearInterval(interval);
       };
-    }, [currentSlide]);
+    }, [currentSlide, images.length]);
 
   return (
     <div>

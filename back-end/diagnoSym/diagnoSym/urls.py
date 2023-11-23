@@ -24,4 +24,6 @@ urlpatterns = [
     path("sign-in/", views.login),
     path('api/process_questionnaire/', views.process_questionnaire),
     path('prediction/', views.disease_prediction, name='disease_prediction'),
+    path('user/details/<str:username>/', views.get_user_details, name='user_edit'),
+    path('user/update/<str:username>/', views.update_user_details, name='update_user_details'),
 ]

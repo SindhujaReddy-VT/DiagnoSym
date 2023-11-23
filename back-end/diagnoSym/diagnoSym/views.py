@@ -44,7 +44,8 @@ def process_questionnaire(request):
                 symptoms_to_create = []
                 for key, value in data.items():
                     if key != 'user':  
-                        modified_key = key.replace('_radio', '')
+                        modified_key = key.split('.)', 1)[1].rstrip('?').strip()
+                        print(modified_key)
                         modified_value = 1 if value == 'Yes' else 0
                         symptom = Symptoms(user_id=user_id, symptom=modified_key, value=modified_value)
                         symptoms_to_create.append(symptom)
@@ -68,8 +69,6 @@ def disease_prediction(request):
                 user_id = user.id
             if user_id is not None:
                 print(f"User ID: {user_id}")
-                # predictions = Prediction.objects.all()
-                # print(str(predictions.query))
                 predictions = [{'disease': 'Blood Cancer', 'prediction': 92.0}]
                 print(predictions)
                 if predictions:
@@ -82,3 +81,38 @@ def disease_prediction(request):
             return JsonResponse({'error': 'User email not provided'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+
+@api_view(['GET'])
+def get_user_details(request, username):
+    user_data = {} 
+    if username:
+        user = User.objects.filter(username=username).first()
+        if user is not None:
+            user_id = user.id
+            if user_id is not None:
+                user_data = {
+                    'username': user.username,
+                    'firstName': user.first_name,
+                    'lastName': user.last_name,
+                    'dob': user.date_of_birth,
+                    'email' : user.email,
+                    'gender' : user.gender
+                }
+    return JsonResponse(user_data)
+
+@api_view(['POST'])
+def update_user_details(request, username):
+    if request.method == 'POST':
+        user = User.objects.filter(username=username).first()
+        if user is not None:
+            data = request.data  
+            user.first_name = data.get('first_name', user.first_name)
+            user.last_name = data.get('last_name', user.last_name)
+            user.date_of_birth = data.get('date_of_birth', user.date_of_birth)
+            user.email = data.get('email', user.email)
+            user.gender = data.get('gender', user.gender)
+            user.save()
+            return Response({'message': 'User details updated successfully'})
+        else:
+            return Response({'message': 'User not found'}, status=404)

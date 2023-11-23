@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../css/header.css'
-import logo from '../logo/logo_v1.png'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { IoMdHelpCircle } from 'react-icons/io';
 import { FaSignOutAlt } from 'react-icons/fa';
+import {  PiStethoscopeBold } from 'react-icons/pi';
 
 const Header = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const handleSignOut = () => {
     localStorage.clear();
-    navigate('/sign-in'); 
+    navigate('/main');
   };
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -25,21 +25,25 @@ const Header = () => {
   return (
     <div>
       <header>
-        <div className="logo-title"><img className="logo" src={logo} alt="logo" />
-          <div className="title">
-            <h1 className="title-d">D</h1>
-            <h1 className="title-iagno">iagno</h1>
-            <h1 className="title-SYM">SYM</h1>
-          </div>
+        <div className="title">
+          <h1>
+            <Link to="/home" className="nav-link">DiagnoS<PiStethoscopeBold />M</Link>
+          </h1>
         </div>
         <div className="nav-bar">
           <ul>
-            <li>Home</li>
             <li>
-              <Link to="/questionnaire">Questionnaire</Link>
+              <Link to="/home" className="nav-link">Home</Link>
             </li>
-            <li>Doctors</li>
-            <li>Precautions</li>
+            <li>
+              <Link to="/questionnaire" className="nav-link">Questionnaire</Link>
+            </li>
+            <li>
+              <Link to="/precautions" className="nav-link">Precautions</Link>
+            </li>
+            <li>
+              <Link to="/feedback" className="nav-link">Feedback</Link>
+            </li>
           </ul>
         </div>
         <div className="dropdown-container">
@@ -50,7 +54,7 @@ const Header = () => {
             <div className="dropdown">
               <ul>
                 <li>
-                  <Link to="/user-details">
+                  <Link to="/user-details" className="nav-drop-link">
                     <BsFillPersonFill /> My Profile
                   </Link>
                 </li>
