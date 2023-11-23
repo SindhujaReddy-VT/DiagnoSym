@@ -145,4 +145,6 @@
     background-color: #f8f9fa; /* Light gray background for disabled input */
     cursor: not-allowed;
   }
-  
+  .prof label{
+    color:black;
+  }

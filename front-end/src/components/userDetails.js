@@ -127,7 +127,7 @@ const UserDetails = () => {
       <div className="container">
         <h4 className="header2">Account Details</h4>
         <form onSubmit={handleSubmit}>
-          <div className="form-group 1">
+          <div className="form-group prof">
             <label htmlFor="username">Username:</label>
             <input
               type="text"
@@ -153,7 +153,7 @@ const UserDetails = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="form-group 1 col-md-6">
+            <div className="form-group prof col-md-6">
               <label htmlFor="lastName">Last Name:</label>
               <input
                 type="text"
@@ -166,7 +166,7 @@ const UserDetails = () => {
               />
             </div>
           </div>
-          <div className="form-group 1">
+          <div className="form-group prof">
             <label htmlFor="gender">Gender:</label>
             <select
               className="form-control"
@@ -180,7 +180,7 @@ const UserDetails = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div className="form-group 1">
+          <div className="form-group prof">
             <label htmlFor="email">Email Address:</label>
             <input
               type="email"
@@ -193,7 +193,7 @@ const UserDetails = () => {
               disabled={true}
             />
           </div>
-          <div className="form-group 1">
+          <div className="form-group prof">
             <label htmlFor="dob">Date of Birth:</label>
             <input
               type="date"
