@@ -10,7 +10,7 @@ const preventive_measure = () => {
       <Header />
       <div className='prev-nex-buttons'>
       <button>
-          <Link to="/doctors_recommendation" className="nav-link">Previous</Link>
+          <Link to="/doctors_profile" className="nav-link">Previous</Link>
         </button>
       </div>
       <Footer />

@@ -10,7 +10,8 @@ import Precautions from './components/precautions';
 import Prediction from "./components/prediction";
 import Feedback from "./components/feedback";
 import Main from "./components/main";
-import Doctors from "./components/doctors_recommendation";
+import DoctorsRecommendation from "./components/doctors_recommendation";
+import Doctors from "./components/doctors_profile";
 import Preventive from "./components/preventive_measure";
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
           <Route path="/prediction" element={<Prediction />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/main" element={<Main />} />
-          <Route path="/doctors_recommendation" element={<Doctors />} />
+          <Route path="/doctors_recommendation" element={<DoctorsRecommendation />} />
+          <Route path="/doctors_profile" element={<Doctors />} />
           <Route path="/preventive_measure" element={<Preventive />} />
         </Routes>
       </div>
