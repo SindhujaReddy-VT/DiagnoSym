@@ -1,11 +1,69 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../css/doctors_recommendation.css';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import male from '../images/male_doctor.jpeg';
+import female from '../images/female_doctor.jpeg';
+import { FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+
 
 const doctors_recommendation = () => {
+  const doctorData = {
+    name: 'Dr. John Doe',
+    gender: 'male',
+    degrees: ['MD', 'PhD'],
+    specialization: 'Cardiologist',
+    contact: '123-456-7890',
+    officeAddress: '123 Medical Street, Cityville',
+    website: 'www.doctorjohn.com',
+  };
+  const { name, gender, degrees, specialization, contact, officeAddress, website } = doctorData;
+
   return (
     <div>
-      
-    </div>
-  )
-}
+      <Header />
+      <div className="doctor-profile-container">
 
-export default doctors_recommendation
+        <div className="left-section">
+          <img
+            src={gender === 'male' ? male : female}
+            alt={`${name}'s profile`}
+          />
+          <div>
+            <h2>{name}</h2>
+            <p>{degrees.join(', ')}</p>
+          </div>
+        </div>
+
+        <div className="right-section">
+          <h2>{name}</h2>
+          <p><strong>Specialization:</strong> {specialization}</p>
+          <p><strong>Contact:</strong> {contact}</p>
+          <p><strong>Office Address:</strong> {officeAddress}</p>
+          <p><strong>Official Website:</strong> {website}</p>
+
+          <div className="social-profiles">
+            <FaFacebook />
+            <FaXTwitter />
+            <FaLinkedin />
+          </div>
+        </div>
+      </div>
+      <div className='prev-nex-buttons'>
+      <button>
+          <Link to="/prediction" className="nav-link">Previous</Link>
+        </button>
+        <button>
+          <Link to="/preventive_measure" className="nav-link">Next</Link>
+        </button>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default doctors_recommendation;

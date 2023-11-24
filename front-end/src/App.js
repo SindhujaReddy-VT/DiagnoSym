@@ -10,7 +10,8 @@ import Precautions from './components/precautions';
 import Prediction from "./components/prediction";
 import Feedback from "./components/feedback";
 import Main from "./components/main";
-
+import Doctors from "./components/doctors_recommendation";
+import Preventive from "./components/preventive_measure";
 
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
@@ -33,6 +34,8 @@ function App() {
           <Route path="/prediction" element={<Prediction />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/doctors_recommendation" element={<Doctors />} />
+          <Route path="/preventive_measure" element={<Preventive />} />
         </Routes>
       </div>
     </Router>

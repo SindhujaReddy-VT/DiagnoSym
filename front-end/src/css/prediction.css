@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    text-align: center; /* Center the text */
+    text-align: center;
   }
   
   .left-division {
@@ -39,7 +39,6 @@
     margin: 10px;
   }
   
-/* Styling for Disease Description */
 .description {
     font-size: 18px;
     line-height: 1.5;
@@ -71,7 +70,6 @@
     transform: scale(1.05);
   }
   
-  /* Add an underline on hover */
   .description ul li::before {
     content: '';
     position: absolute;
@@ -89,15 +87,29 @@
     transform: scaleX(1);
     transform-origin: left;
   }
-  
-  
-  /* Styling for the Information Message */
+
   .info-message {
     font-size: 18px;
-    color: #630031; /* Change to the desired color */
+    color: #630031;
     margin-bottom: 20px;
   }
   .left-division img{
     width:15rem;
     height:15rem
   }
+
+  .prev-nex-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prev-nex-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #630031;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}

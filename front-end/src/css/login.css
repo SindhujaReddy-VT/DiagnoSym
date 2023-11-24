@@ -1,7 +1,12 @@
 /* login.css */
-*{
-  color:white;
+
+.input-label,
+.custom-control-label-1,
+.login-button,
+.forgot-password a {
+  color: white !important;
 }
+
 .whole-container {
   /* Your background image styling */
   background-color: #f0f0f0; /* Fallback background color */
@@ -17,6 +22,7 @@
   background-color: FFFFFF0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .login-header {
