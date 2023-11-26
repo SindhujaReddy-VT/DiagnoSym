@@ -1,6 +1,118 @@
-.message{
-    font-size: larger;
-    margin: 10rem;
-    text-align: center;
-    color: black;
-}
+/* feedback.css */
+  
+  .feedback-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .feedback-card {
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+  }
+  
+  .feedback-card p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .emoji-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .icon {
+    color: #630031;
+    cursor: pointer;
+  }
+  .icon:hover{
+    background-color: #CF4420;
+    color:white;
+    border-radius: 50px;
+  }
+  
+  .sub-canc-clr {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .sub-canc-clr button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #630031;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sub-canc-clr button:hover {
+    background-color: #CF4420;
+  }
+  /* YourComponent.css */
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 2rem;
+  }
+  
+  .comment-card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 800px;
+  }
+  
+  .comment-card p {
+    margin: 0;
+    font-size: 16px;
+  }
+  .usr{
+    display: flex;
+    gap:1rem;
+  }
+  .profile-usr{
+    color: #630031;
+    font-style: italic;
+  }
+  .profile-usr:hover{
+    text-decoration: underline;
+  }
+  .commnt-text{
+    font-size: large;
+    color:#630031;
+  }
+  .cmt{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .main-feed{
+    margin: 2rem;
+  }

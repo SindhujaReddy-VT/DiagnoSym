@@ -5,3 +5,7 @@ header{
 .plain-header {
     color: white !important;
   }
+  .head-plain h1{
+    color: white;
+
+  }

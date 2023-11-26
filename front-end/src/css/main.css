@@ -26,9 +26,11 @@
 }
 .sl-title{
     font-size: 40px;
+    color: white;
 }
 .sl-internal{
     width:50%;
     font-size: large;
     font-weight: 400;
+    color: white;
 }
