@@ -55,10 +55,9 @@ const Prediction = ({ predictedDisease, predictedImage, description }) => {
             </div>
             <div className='prev-nex-buttons'>
                 <button>
-                    <Link to="/doctors_recommendation" className="nav-link">Next</Link>
+                <Link to={`/doctors_recommendation?disease=Migraine`} className="nav-link">Next</Link>
                 </button>
             </div>
-
             <Footer />
         </div>
     );

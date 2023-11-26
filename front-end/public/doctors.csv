@@ -1,0 +1,298 @@
+id,disease,specialization,qualification,name,gender
+1,Allergy,Allergist,MD,Dr. Roshni R. Naik,F
+2,Allergy,Allergist,DO,Dr. Vahid Rahimian,M
+3,Allergy,Allergist,"MD, MS",Dr. Ira Finegold,F
+4,Allergy,Allergist,MD,Dr. Neha Sirohi,F
+5,Allergy,Allergist,MD,Dr. Tim Mainardi,M
+6,Allergy,Allergist,MD,Dr. Mariana Marcu,F
+7,Allergy,Allergist,MD,Dr. Lisa Ellman-Grunther,F
+8,Allergy,Allergist,MD,Dr. Julie Kuriakose,F
+9,Allergy,Allergist,MD,Dr. Rushita Mehta,F
+10,Psoriasis,Dermatologist,MD,Dr. Dina Began,F
+11,Psoriasis,Dermatologist,MD,Dr. Uchenna Okereke,M
+12,Psoriasis,Dermatologist,DO,Dr. Charlotte Noorollah,M
+13,Psoriasis,Dermatologist,MD,Dr. Jonathan Trager,M
+14,Psoriasis,Dermatologist,DO,Dr. Sanjosh Singh,M
+15,Psoriasis,Dermatologist,"MD, FAAD",Dr. Jennifer Geiger,F
+16,Psoriasis,Dermatologist,MD,Dr. Joyce Davis,M
+17,Psoriasis,Dermatologist,MD,Dr. Lian Mack,M
+18,Psoriasis,Dermatologist,MD,Dr. Pinkas Lebovits,F
+19,Chicken pox,Dermatologist,DO,Dr. Amy Spizuoco,F
+20,Chicken pox,Dermatologist,MD,Dr. Anjali Vekaria,F
+21,Chicken pox,Dermatologist,"MD, FAAD",Dr. Jennifer Geiger,F
+22,Chicken pox,Dermatologist,MD,Dr. Janet Prystowsky,F
+23,Chicken pox,Dermatologist,MD,Dr. Jessica Feig,F
+24,Chicken pox,Dermatologist,MD,Dr. Jessica Feig,F
+25,Chicken pox,Dermatologist,"MD, FAAD",Dr. Omar Noor,M
+26,Chicken pox,Dermatologist,MD,Dr. Tarek Yamany,M
+27,Chicken pox,Dermatologist,MD,Dr. Tarek Yamany,M
+28,Acne,Dermatologist,MD,Dr. Alison Gruen,F
+29,Acne,Dermatologist,MD,Dr. Kristina Goldenberg,F
+30,Acne,Dermatologist,"MD, JD",Dr. Robert L. Buka,M
+31,Acne,Dermatologist,MD,Dr. Amy Lewis,F
+32,Acne,Dermatologist,"MD, FAAD",Dr. Monica Halem,F
+33,Acne,Dermatologist,MD,Dr. Douglas Altchek,M
+34,Acne,Dermatologist,MD,Dr. Jonathan Ungar,M
+35,Acne,Dermatologist,MD,Dr. Bruce E. Katz,M
+36,Acne,Dermatologist,DO,Dr. Sanjosh Singh,M
+37,Impetigo,Dermatologist,MD,Dr. Bruce E. Katz,M
+38,Impetigo,Dermatologist,MD,Dr. Julide Celebi,F
+39,Impetigo,Dermatologist,MD,Dr. Pinkas Lebovits,F
+40,Impetigo,Dermatologist,MD,Dr. Debra Jaliman,F
+41,Impetigo,Dermatologist,MD,Dr. Andrew Woolrich,M
+42,Impetigo,Dermatologist,DO,Dr. Charlotte Noorollah,F
+43,Impetigo,Dermatologist,MD,Dr. Dina Began,F
+44,Impetigo,Dermatologist,MD,Dr. Alison Gruen,F
+45,Impetigo,Dermatologist,DO,Dr. Sourab Choudhury,M
+46,Fungal infection,Dermatologist,MD,Dr. Nikesh Patel,M
+47,Fungal infection,Dermatologist,MD,Dr. Whitney Tan,F
+48,Fungal infection,Dermatologist,MD,Dr. Elyse Love,F
+49,Fungal infection,Dermatologist,MD,Dr. Bradley Glodny,M
+50,Fungal infection,Dermatologist,MD,Dr. Erin Kil,M
+51,Fungal infection,Dermatologist,DO,Dr. Kaylan Pustover,M
+52,Fungal infection,Dermatologist,MD,Dr. Jonathan Trager,M
+53,Fungal infection,Dermatologist,DO,Dr. Kaylan Pustover,M
+54,Fungal infection,Dermatologist,MD,Dr. Jonathan Trager,M
+55,Hypothyroidism,Endocrinologist,MD,Dr. Harry Gruenspan,M
+56,Hypothyroidism,Endocrinologist,MD,Dr. Joan Cantero- Lakhanpal,M
+57,Hypothyroidism,Endocrinologist,MD,Dr. Rahul Agarwal,M
+58,Hypothyroidism,Endocrinologist,MD,Dr. Peter Goulden,M
+59,Hypothyroidism,Endocrinologist,MD,Dr. Joan Cantero- Lakhanpal,M
+60,Hypothyroidism,Endocrinologist,MD,Dr. Rahul Agarwal,M
+61,Hypothyroidism,Endocrinologist,MD,Dr. Deena Adimoolam,F
+62,Hypothyroidism,Endocrinologist,MD,Dr. Yasmin Khan,F
+63,Hypothyroidism,Endocrinologist,MD,Dr. Robert S. Bernstein,M
+64,Diabetes ,Endocrinologist,MD,Dr. Gillian Katz,M
+65,Diabetes ,Endocrinologist,MD,Dr. Rahul Agarwal,M
+66,Diabetes ,Endocrinologist,MD,Dr. Cesar Abuchaibe,F
+67,Diabetes ,Endocrinologist,MD,Dr. Peter Goulden,M
+68,Diabetes ,Endocrinologist,MD,Dr. Olga Leonardi,F
+69,Diabetes ,Endocrinologist,MD,Dr. Tamar Reisman,M
+70,Diabetes ,Endocrinologist,MD,Dr. Joan Cantero- Lakhanpal,M
+71,Diabetes ,Endocrinologist,MD,Dr. Valerie Oram,M
+72,Diabetes ,Endocrinologist,MD,Dr. Cesar Abuchaibe,M
+73,Hypoglycemia,Endocrinologist,MD,Dr. Simeng Sun,F
+74,Hypoglycemia,Endocrinologist,MD,Dr. Swaminathan Giridharan,M
+75,Hypoglycemia,Endocrinologist,MD,Dr. Marlyn Fernandez,F
+76,Hypoglycemia,Endocrinologist,MD,Dr. Alan Sacerdote,M
+77,Hypoglycemia,Endocrinologist,MD,Dr. Matin Sharafatkhah,M
+78,Hypoglycemia,Endocrinologist,MD,Dr. Steven Hodak,M
+79,Hypoglycemia,Endocrinologist,MD,Dr. Pushplata Siroya,F
+80,Hypoglycemia,Endocrinologist,MD,Dr. Herbert Samuels,M
+81,Hypoglycemia,Endocrinologist,MD,Dr. Maryann Nicastro,F
+82,Hyperthyroidism,Endocrinologist,MD,Dr. Olga Leonardi,F
+83,Hyperthyroidism,Endocrinologist,MD,Dr. Tamar Reisman,F
+84,Hyperthyroidism,Endocrinologist,MD,Dr. Joan Cantero- Lakhanpal,M
+85,Hyperthyroidism,Endocrinologist,MD,Dr. Valerie Oram,F
+86,Hyperthyroidism,Endocrinologist,MD,Dr. Cesar Abuchaibe,M
+87,Hyperthyroidism,Endocrinologist,MD,Dr. Simeng Sun,M
+88,Hyperthyroidism,Endocrinologist,MD,Dr. Swaminathan Giridharan,M
+89,Hyperthyroidism,Endocrinologist,MD,Dr. Marlyn Fernandez,M
+90,Hyperthyroidism,Endocrinologist,MD,Dr. Alan Sacerdote,M
+91,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Jonathan Erber,M
+92,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Anthony Starpoli,M
+93,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Michael Blechman,M
+94,Peptic ulcer diseae,Gastroenterologist,"MD, CAc",Dr. Aran Degenhardt,M
+95,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Pearl Lui,F
+96,Peptic ulcer diseae,Gastroenterologist,DO,Dr. Daniel Kim,M
+97,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Karthik Karibandi,M
+98,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Mekdes Hailu,F
+99,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Yevgeniy Vaynkof,M
+100,Peptic ulcer diseae,Gastroenterologist,MD,Dr. Justin Amarnani,M
+101,Jaundice,Gastroenterologist,MD,Dr. Alford Smith,M
+102,Jaundice,Gastroenterologist,MD,Dr. Faisal Nagarwala,M
+103,Jaundice,Gastroenterologist,MD,Dr. Wayne Sebastiano,M
+104,Jaundice,Gastroenterologist,MD,Dr. Blessan Thomas,M
+105,Jaundice,Gastroenterologist,MD,Dr. Clement Ayanbadejo,M
+106,Jaundice,Gastroenterologist,DO,Dr. Natalia Levinskaya,F
+107,Jaundice,Gastroenterologist,MD,Dr. Antonio Dajer,M
+108,Jaundice,Gastroenterologist,MD,Dr. Kenneth Marx,F
+109,Jaundice,Gastroenterologist,NP,Ryan Rifkin,M
+110,Dimorphic hemmorhoids(piles),Gastroenterologist,MD,Dr. Matthew Pabis,M
+111,Dimorphic hemmorhoids(piles),Gastroenterologist,DO,Dr. Felix Chien,M
+112,Dimorphic hemmorhoids(piles),Gastroenterologist,MD,Dr. Syra Hanif,F
+113,Dimorphic hemmorhoids(piles),Gastroenterologist,DO,Dr. Rajiv Agashiwala,M
+114,Dimorphic hemmorhoids(piles),Gastroenterologist,MD,Dr. Diana Nassar,F
+115,Dimorphic hemmorhoids(piles),Gastroenterologist,DO,Dr. Jared Dropkin,M
+116,Dimorphic hemmorhoids(piles),Gastroenterologist,MD,Dr. Lee Coleman Hinnant,M
+117,Dimorphic hemmorhoids(piles),Gastroenterologist,MD,Dr. Lydia Wu,F
+118,Dimorphic hemmorhoids(piles),Gastroenterologist,MD,Dr. Xiao Xiao Ma,F
+119,Gastroenteritis,Gastroenterologist,"MD, CAc",Dr. Aran Degenhardt,M
+120,Gastroenteritis,Gastroenterologist,MD,Dr. Pearl Lui,F
+121,Gastroenteritis,Gastroenterologist,DO,Dr. Daniel Kim,M
+122,Gastroenteritis,Gastroenterologist,MD,Dr. Karthik Karibandi,M
+123,Gastroenteritis,Gastroenterologist,MD,Dr. Mekdes Hailu,M
+124,Gastroenteritis,Gastroenterologist,MD,Dr. Yevgeniy Vaynkof,F
+125,Gastroenteritis,Gastroenterologist,MD,Dr. Justin Amarnani,M
+126,Gastroenteritis,Gastroenterologist,MD,Dr. Alford Smith,M
+127,Gastroenteritis,Gastroenterologist,MD,Dr. Faisal Nagarwala,M
+128,Chronic cholestasis,Hepatologist,"LAc, MSTOM",Diem Truong,M
+129,Chronic cholestasis,Hepatologist,LAc,Monique Rivera,M
+130,Chronic cholestasis,Hepatologist,"LAc, DiplAc, MA, MSAc",Ronald Pratt,M
+131,Chronic cholestasis,Hepatologist,LAc,Daniel Camburn,M
+132,Chronic cholestasis,Hepatologist,"LAc, MSTOM, PsyD",Deborah Barbiere,M
+133,Chronic cholestasis,Hepatologist,"MSTOM, LAc",Miguel Maya,F
+134,Chronic cholestasis,Hepatologist,LAc,Elizabeth Healy,F
+135,Chronic cholestasis,Hepatologist,"LAc, DACM",Irina Logman,F
+136,Chronic cholestasis,Hepatologist,LAc,Han Jun,M
+137,Hepatitis A,Hepatologist,PhD,Dr. Ai Lee,M
+138,Hepatitis A,Hepatologist,"LAc, DACM",Erin Lee,M
+139,Hepatitis A,Hepatologist,LAc,Jonathan Simon,M
+140,Hepatitis A,Hepatologist,"MSTOM, LAc",Tammy Huang,M
+141,Hepatitis A,Hepatologist,LAc,Dong Hwan Lee,M
+142,Hepatitis A,Hepatologist,LAc,Jodi Gentili,F
+143,Hepatitis A,Hepatologist,"LAc, LMT",Boris Bernadsky,M
+144,Hepatitis A,Hepatologist,LAc,Xinyu (Allison) Cheng,F
+145,Hepatitis A,Hepatologist,LAc,Qian Li,F
+146,Hepatitis B,Hepatologist,"LAc, MSAc",Anna Hajosi,F
+147,Hepatitis B,Hepatologist,"LAc, MS",Deborah Valentin,F
+148,Hepatitis B,Hepatologist,LAc,Ki Yin Cheng,F
+149,Hepatitis B,Hepatologist,LAc,Qi Yu,F
+150,Hepatitis B,Hepatologist,LAc,Lisa Sumption,F
+151,Hepatitis B,Hepatologist,PT,Youngsoo Oh,F
+152,Hepatitis B,Hepatologist,"DAc, LAc, LMT",Enensaauas Rastrygina,F
+153,Hepatitis B,Hepatologist,"LAc, DACM",Samantha Hewwing,F
+154,Hepatitis B,Hepatologist,LAc,Flora Luyando,F
+155,Hepatitis C,Hepatologist,LAc,Yuji Kim,M
+156,Hepatitis C,Hepatologist,"LAc, DACM, MSTCM",Zhiwen Zhong,M
+157,Hepatitis C,Hepatologist,LAc,Lida Ahmady,F
+158,Hepatitis C,Hepatologist,LAc,Maya Kron,F
+159,Hepatitis C,Hepatologist,LAc,Yoko Kuo,F
+160,Hepatitis C,Hepatologist,LAc,Heeock Lee,F
+161,Hepatitis C,Hepatologist,LAc,Itorye Silver,F
+162,Hepatitis C,Hepatologist,"DAOM, LAc, MSTOM",Julie Cho,F
+163,Hepatitis C,Hepatologist,"LAc, DACM",Frank Muscara,M
+164,Hepatitis C,Hepatologist,LAc,Yang Yang Zucco,M
+165,Hepatitis D,Hepatologist,DACM,Kelsey Tangel,F
+166,Hepatitis D,Hepatologist,LAc,Joelle Ludwig,M
+167,Hepatitis D,Hepatologist,LAc,Joannie Campuzano,F
+168,Hepatitis D,Hepatologist,"DAc, LAc",Joyce Lilly,F
+169,Hepatitis D,Hepatologist,LAc,Li Ting Lin,F
+170,Hepatitis D,Hepatologist,"LAc, DAc",Philip Trigiani,M
+171,Hepatitis D,Hepatologist,LAc,Connie Qian,M
+172,Hepatitis D,Hepatologist,"LAc, MS",Douglas Freeman,M
+173,Hepatitis D,Hepatologist,LAc,Amy Woodstock,F
+174,Alcoholic hepatitis,Hepatologist,"LAc, DACM",Samantha Hewwing,F
+175,Alcoholic hepatitis,Hepatologist,LAc,Flora Luyando,F
+176,Alcoholic hepatitis,Hepatologist,LAc,Yuji Kim,M
+177,Alcoholic hepatitis,Hepatologist,"LAc, DACM, MSTCM",Zhiwen Zhong,M
+178,Alcoholic hepatitis,Hepatologist,LAc,Lida Ahmady,M
+179,Alcoholic hepatitis,Hepatologist,LAc,Maya Kron,M
+180,Alcoholic hepatitis,Hepatologist,LAc,Yoko Kuo,F
+181,Alcoholic hepatitis,Hepatologist,LAc,Heeock Lee,F
+182,Alcoholic hepatitis,Hepatologist,LAc,Itorye Silver,M
+183,Malaria,Infectious Disease Specialist,MD,Dr. William Mandell,M
+184,Malaria,Infectious Disease Specialist,MD,Dr. Dennis Karter,M
+185,Malaria,Infectious Disease Specialist,MD,Dr. David Bekhor,M
+186,Malaria,Infectious Disease Specialist,"MD, MPH",Dr. Jana Preis,F
+187,Dengue,Infectious Disease Specialist,MD,Dr. William Mandell,M
+188,Dengue,Infectious Disease Specialist,MD,Dr. Dennis Karter,M
+189,Dengue,Infectious Disease Specialist,MD,Dr. David Bekhor,M
+190,Dengue,Infectious Disease Specialist,"MD, MPH",Dr. Jana Preis,F
+191,Migraine,Neurologist,MD,Dr. Cheryl Cottrol,F
+192,Migraine,Neurologist,MD,Dr. Ewa Koziorynska,F
+193,Migraine,Neurologist,MD,Dr. Christine Fitzpatrick,F
+194,Migraine,Neurologist,MD,Dr. Michael Carciente,M
+195,Migraine,Neurologist,MD,Dr. Cynthia Harden,F
+196,Migraine,Neurologist,MD,Dr. Cheryl Cottrol,F
+197,Migraine,Neurologist,MD,Dr. Risa Ravitz,F
+198,Migraine,Neurologist,MD,Dr. Afshan Khan,M
+199,Migraine,Neurologist,MD,Dr. Pascal Saremsky,M
+200,Cervical spondylosis,Neurologist,MD,Dr. Yoni Dokko,M
+201,Cervical spondylosis,Neurologist,MD,Dr. Audrey Halpern,M
+202,Cervical spondylosis,Neurologist,"MD, PhD",Dr. Michael Hutchinson,M
+203,Cervical spondylosis,Neurologist,"MD, PhD",Dr. Artem Kaplan,M
+204,Cervical spondylosis,Neurologist,MD,Dr. Debra Shabas,F
+205,Cervical spondylosis,Neurologist,MD,Dr. Sylvia Mohen,F
+206,Cervical spondylosis,Neurologist,MD,Dr. Neil Rosenthal,M
+207,Cervical spondylosis,Neurologist,"MD, PhD",Dr. Artem Kaplan,M
+208,Cervical spondylosis,Neurologist,DO,Dr. Margarita Mikhaylova,F
+209,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Ewa Koziorynska,F
+210,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Sylvia Mohen,F
+211,Paralysis (brain hemorrhage),Neurologist,MD,Dr. David Snyder,M
+212,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Audrey Halpern,M
+213,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Risa Ravitz,F
+214,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Cindy Jadoo,F
+215,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Debra Shabas,F
+216,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Yoni Dokko,F
+217,Paralysis (brain hemorrhage),Neurologist,MD,Dr. Michael Heublum,M
+218,AIDS,Osteopathic,"MD, FACOG",Dr. Ephraim Ovitsh,M
+219,AIDS,Osteopathic,MD,Dr. Jeffrey Mazlin,M
+220,AIDS,Osteopathic,MD,Dr. Virginia (Beth) Mclean,F
+221,AIDS,Osteopathic,MD,Dr. Gopika Nandini Are,F
+222,AIDS,Osteopathic,MD,Dr. Orit Beitner,M
+223,AIDS,Osteopathic,MD,Dr. Sonia Kim,F
+224,(vertigo) Paroymsal  Positional Vertigo,Otolaryngologist,MD,Dr. Joel Hillelsohn,M
+225,(vertigo) Paroymsal  Positional Vertigo,Otolaryngologist,MD,Dr. Farshad Shafizadeh,M
+226,(vertigo) Paroymsal  Positional Vertigo,Otolaryngologist,MD,Dr. Chongmin Kim,M
+227,(vertigo) Paroymsal  Positional Vertigo,Otolaryngologist,MD,Dr. Philippa Cheetham,F
+228,(vertigo) Paroymsal  Positional Vertigo,Otolaryngologist,"MD, FACS",Dr. Himansh Khanna,M
+229,Common Cold,Otolaryngologist,MD,Dr. Joel Hillelsohn,M
+230,Common Cold,Otolaryngologist,MD,Dr. Farshad Shafizadeh,M
+231,Common Cold,Otolaryngologist,MD,Dr. Chongmin Kim,M
+232,Common Cold,Otolaryngologist,MD,Dr. Philippa Cheetham,F
+233,Common Cold,Otolaryngologist,"MD, FACS",Dr. Himansh Khanna,M
+234,Typhoid,Pediatric Emergency Medicine Specialist,MD,Dr. Marie Lupica,F
+235,Typhoid,Pediatrician,MD,Dr. Carolyn Chang,F
+236,Typhoid,Pediatrician,MD,Dr. Jenny Shih,F
+237,Typhoid,Pediatrician,MD,Dr. Eda Chao,F
+238,Typhoid,Pediatrician,MD,Dr. Piyush Mehta,M
+239,Varicose veins,Phlebologist,MD,Dr. Jose Colon,M
+240,Varicose veins,Phlebologist,MD,Dr. Jennifer Zocca,F
+241,Varicose veins,Phlebologist,MD,Dr. Jennifer Zocca,F
+242,Varicose veins,Phlebologist,MD,Dr. Ari Lerner,M
+243,Varicose veins,Phlebologist,MD,Dr. Sukdeb Datta,M
+244,Varicose veins,Phlebologist,MD,Dr. Jose Colon,M
+245,Varicose veins,Phlebologist,MD,Dr. Ramesh Sawhney,M
+246,Varicose veins,Phlebologist,MD,Dr. Shervin Najafi,M
+247,Varicose veins,Phlebologist,MD,Dr. Todd Koppel,M
+248,Bronchial Asthma,Pulmonary Diseases and Critical Care Medicine Specialist,MD,Dr. Adil Shujaat,M
+249,Bronchial Asthma,Pulmonologist,MD,Dr. Klaus-Dieter Lessnau,M
+250,Bronchial Asthma,Pulmonologist,MD,Dr. Edward Eden,M
+251,Bronchial Asthma,Pulmonologist,MD,Dr. Joseph Ghassibi,M
+252,Bronchial Asthma,Pulmonologist,MD,Dr. David Steiger,M
+253,Bronchial Asthma,Pulmonologist,MD,Dr. Julia Budde,F
+254,Bronchial Asthma,Pulmonologist,MD,Dr. Nan Li,F
+255,Bronchial Asthma,Pulmonologist,MD,Dr. Chitoor Govindaraj,M
+256,Bronchial Asthma,Pulmonologist,MD,Dr. Peter Perdik,M
+257,Pneumonia,Pulmonologist,MD,Dr. Sunil Mehra,M
+258,Pneumonia,Pulmonologist,"MD, FCCP",Dr. Victor Gorloff,M
+259,Pneumonia,Pulmonologist,MD,Dr. Josephine Samson,F
+260,Pneumonia,Pulmonologist,"MD, FCCP",Dr. Theophanis Pavlou,M
+261,Pneumonia,Pulmonologist,MD,Dr. Harris Tesher,M
+262,Pneumonia,Pulmonologist,MD,Dr. Brian Benoff,M
+263,Pneumonia,Pulmonologist,MD,Dr. Roxanna Jimenez,F
+264,Pneumonia,Pulmonologist,MD,Dr. Steven Shadi Badin,M
+265,Pneumonia,Pulmonologist,MD,Dr. Stuart Silberstein,M
+266,Osteoarthristis,Rheumatologist,MD,Dr. Priya Chokshi,F
+267,Osteoarthristis,Rheumatologist,MD,Dr. Jay Adlersberg,M
+268,Osteoarthristis,Rheumatologist,MD,Dr. Priya Chokshi,F
+269,Osteoarthristis,Rheumatologist,MD,Dr. Jay Adlersberg,M
+270,Osteoarthristis,Rheumatologist,MD,Dr. Waseem Mir,M
+271,Osteoarthristis,Rheumatologist,MD,Dr. Olivia Ghaw,F
+272,Osteoarthristis,Rheumatologist,MD,Dr. Ariel Teitel,F
+273,Arthritis,Rheumatologist,MD,Dr. Priya Chokshi,F
+274,Arthritis,Rheumatologist,MD,Dr. Jay Adlersberg,M
+275,Arthritis,Rheumatologist,MD,Dr. Priya Chokshi,F
+276,Arthritis,Rheumatologist,MD,Dr. Jay Adlersberg,M
+277,Arthritis,Rheumatologist,MD,Dr. Waseem Mir,M
+278,Arthritis,Rheumatologist,MD,Dr. Olivia Ghaw,F
+279,Arthritis,Rheumatologist,MD,Dr. Ariel Teitel,F
+280,Tuberculosis,Pulmonologist,MD,Dr. Julia Budde,F
+281,Tuberculosis,Pulmonologist,MD,Dr. Nan Li,F
+282,Tuberculosis,Pulmonologist,MD,Dr. Chitoor Govindaraj,M
+283,Tuberculosis,Pulmonologist,MD,Dr. Peter Perdik,M
+284,Tuberculosis,Pulmonologist,MD,Dr. Sunil Mehra,M
+285,Tuberculosis,Pulmonologist,"MD, FCCP",Dr. Victor Gorloff,M
+286,Tuberculosis,Pulmonologist,MD,Dr. Josephine Samson,F
+287,Tuberculosis,Pulmonologist,"MD, FCCP",Dr. Theophanis Pavlou,F
+288,Tuberculosis,Pulmonologist,MD,Dr. Harris Tesher,M
+289,Urinary tract infection,Gynecologist,MD,Dr. Shereen Russell,M
+290,Urinary tract infection,Gynecologist,"MD, FACOG",Dr. Karen Brodman,M
+291,Urinary tract infection,Gynecologist,MD,Dr. Lissa Hirsch,F
+292,Urinary tract infection,Gynecologist,MD,Dr. Felix Cohen,M
+293,Urinary tract infection,Gynecologist,MD,Dr. Shereen Russell,F
+294,Urinary tract infection,Gynecologist,MD,Dr. Lissa Hirsch,F
+295,Urinary tract infection,Gynecologist,DO,Dr. Natalya Goltyapina,F
+296,Urinary tract infection,Gynecologist,MD,Dr. Jane Galasso,F
+297,Urinary tract infection,Gynecologist,MD,Dr. Boris Petrikovsky,M

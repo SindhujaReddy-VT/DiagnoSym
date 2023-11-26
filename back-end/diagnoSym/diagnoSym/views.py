@@ -1,8 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import JsonResponse
-from .serializers import UserSerializers
-from .models import User, Symptoms, Prediction
+from .serializers import UserSerializers, ReviewSerializer 
+from .models import User, Symptoms, Prediction, Review
 from rest_framework.response import Response
 import json
 
@@ -17,7 +17,6 @@ def register(request):
             errors = serializer.errors
             return JsonResponse({"status": "Registration Failed", "errors": errors}, status=status.HTTP_400_BAD_REQUEST)
 
-
 @api_view(['POST'])
 def login(request):
     if request.method == 'POST':
@@ -30,7 +29,6 @@ def login(request):
             return JsonResponse({"message": "Login failed. Invalid credentials.", "status": "fail"},
                                 status=status.HTTP_401_UNAUTHORIZED)
         
-
 @api_view(['POST'])
 def process_questionnaire(request):
     if request.method == 'POST':
@@ -57,7 +55,6 @@ def process_questionnaire(request):
             return JsonResponse({'error': 'User email not provided'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
-    
 
 @api_view(['GET'])
 def disease_prediction(request):
@@ -81,7 +78,6 @@ def disease_prediction(request):
             return JsonResponse({'error': 'User email not provided'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
-
 
 @api_view(['GET'])
 def get_user_details(request, username):
@@ -116,3 +112,21 @@ def update_user_details(request, username):
             return Response({'message': 'User details updated successfully'})
         else:
             return Response({'message': 'User not found'}, status=404)
+             
+@api_view(['GET', 'POST'])
+def feedback(request, username=None):
+    if request.method == 'GET':
+        if username:
+            user = User.objects.filter(username=username).first()
+            reviews = Review.objects.filter(author=user)
+        else:
+            reviews = Review.objects.all()
+        serializer = ReviewSerializer(reviews, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        user = User.objects.filter(username=username).first()
+        content = request.data.get('content', '')
+        review = Review.objects.create(author=user, content=content)
+        serializer = ReviewSerializer(review)
+        return Response(serializer.data)
+    

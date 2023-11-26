@@ -19,3 +19,7 @@ class Prediction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) 
     disease = models.CharField(max_length=150)
     score = models.FloatField(default=0)
+
+class Review(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()

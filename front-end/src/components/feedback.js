@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/feedback.css';
 import Footer from './footer';
 import Header from './header';
@@ -9,7 +9,43 @@ import { HiOutlineEmojiHappy } from "react-icons/hi";
 import { BiHappyHeartEyes } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 
-const feedback = () => {
+const Feedback = () => {
+  const [reviews, setReviews] = useState([]);
+  const [feedbackContent, setFeedbackContent] = useState('');
+
+  useEffect(() => {
+    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    setReviews(storedReviews);
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('reviews', JSON.stringify(reviews));
+  }, [reviews]);
+
+  const handleChange = (e) => {
+    setFeedbackContent(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    const username = window.localStorage.getItem("username");
+    const apiUrl = `http://127.0.0.1:8000/feedback/user/${username}/`;
+    console.log('API URL:', apiUrl);
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ content: feedbackContent }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        setReviews([...reviews, data]);
+        setFeedbackContent('');
+      })
+      .catch(error => console.error('Error submitting feedback:', error));
+  };
+  
   const iconSize = '2em';
   return (
     <div>
@@ -35,25 +71,29 @@ const feedback = () => {
               className='cmt'
               placeholder="Write your Feedback....."
               rows={4}
+              value={feedbackContent}
+              onChange={handleChange}
             />
           </div>
         </div>
         <div className='sub-canc-clr'>
-          <button type="button">Submit</button>
+          <button type="button" onClick={handleSubmit}>Submit</button>
           <button type="button">Cancel</button>
           <button type="button">Clear</button>
         </div>
         <div className='comments'>
           <span className='commnt-text'>All Comments:</span>
-          <div className='comment-card'>
-            <div className='usr'>
-              <CgProfile size={25} />
-              <span className='profile-usr'>
-                John
-              </span>
+          {reviews.map((review, index) => (
+            <div key={index} className='comment-card'>
+              <div className='usr'>
+                <CgProfile size={25} />
+                <span className='profile-usr'>
+                Test
+                </span>
+              </div>
+              <p>{review.content}</p>
             </div>
-            <p>The DiagnoSym app is really helpful for people who are suffering from symptoms and want to diagonize themselves.</p>
-          </div>
+          ))}
         </div>
       </div>
       <Footer />
@@ -61,4 +101,4 @@ const feedback = () => {
   );
 }
 
-export default feedback;
+export default Feedback;

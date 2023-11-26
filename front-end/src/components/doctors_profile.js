@@ -7,7 +7,7 @@ import female from '../images/female_doctor.jpeg';
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
-
+import Papa from 'papaparse';
 
 const doctors_profile = () => {
   const doctorData = {
