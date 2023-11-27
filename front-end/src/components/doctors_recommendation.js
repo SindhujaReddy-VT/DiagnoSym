@@ -33,7 +33,7 @@ const DoctorsRecommendation = () => {
       <Header />
       <div className='rec-msg'>
         <p className="recommendation-message">
-          <i>We recommend the following doctors who specialize in treating your specific condition. These healthcare professionals are here to provide you with expert care and support on your journey to recovery.</i>
+          We recommend the following doctors who specialize in treating your specific condition. These healthcare professionals are here to provide you with expert care and support on your journey to recovery.
         </p>
       </div>
 

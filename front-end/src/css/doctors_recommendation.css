@@ -10,12 +10,14 @@
     margin-bottom: 20px;
     max-width: 800px; /* Adjust the maximum width as needed */
     line-height: 1.5;
+    font-style: italic;
+  font-weight: 100;
   }
-.doctors-rec-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust the height as needed */
+  .doctors-rec-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax value as needed */
+    gap: 20px; /* Adjust the gap between cards as needed */
+    margin: 2rem;
   }
   
   .doctor-card {
