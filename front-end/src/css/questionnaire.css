@@ -1,4 +1,10 @@
-/* App.css (or your preferred CSS file) */
+.main-container{
+  display: flex;
+  justify-content: space-between;
+  margin-left:  0;
+}
+
+
 .questionnaire {
   display: flex;
   flex-direction: column;
@@ -7,6 +13,12 @@
 
 .questions {
   display: flex;
+  justify-content: space-between;
+}
+
+.question-title h5 {
+margin-top:10px;
+
 }
 
 .sidebar {
@@ -20,6 +32,10 @@
   margin-top: 3rem;
   margin-left: 3rem;
   border: 2px solid #630031;
+  width: 400px;
+  height: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+
 }
 
 .question-list li {
@@ -41,13 +57,16 @@
 }
 
 .question {
-  max-width: 500px;
-  max-height: 500px;
+  width:45%;
+  height:30%;
   background-color: #fff;
   padding: 20px;
   border: 2px solid #630031;
   margin:10rem;
+  margin-top:15rem;
+  margin-left: 20rem;
   color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
 }
 
 label {
@@ -92,8 +111,8 @@ input[type="submit"]:hover {
 .question-list {
   margin: 4px, 4px;
   padding: 4px;
-  width: 300px;
-  height: 400px;
+  width: 500px;
+  height: 700px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
@@ -108,4 +127,5 @@ input[type="submit"]:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
+  margin-top:10px;
 }
