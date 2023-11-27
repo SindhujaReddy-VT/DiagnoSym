@@ -1,60 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Papa from 'papaparse';
 import '../css/doctors_profile.css';
 import Header from './header';
 import Footer from './footer';
 import male from '../images/male_doctor.jpeg';
 import female from '../images/female_doctor.jpeg';
-import { FaFacebook } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import Papa from 'papaparse';
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { useParams } from 'react-router-dom';
 
-const doctors_profile = () => {
-  const doctorData = {
-    name: 'Dr. John Doe',
-    gender: 'male',
-    degrees: ['MD', 'PhD'],
-    specialization: 'Cardiologist',
-    contact: '123-456-7890',
-    officeAddress: '123 Medical Street, Cityville',
-    website: 'www.doctorjohn.com',
-  };
-  const { name, gender, degrees, specialization, contact, officeAddress, website } = doctorData;
+const DoctorsProfile = () => {
+  const { id } = useParams();
+  const [doctorData, setDoctorData] = useState(null);
+
+  useEffect(() => {
+    const csvFilePath = '/doctors.csv';
+
+    Papa.parse(csvFilePath, {
+      download: true,
+      header: true,
+      complete: (result) => {
+        const doctor = result.data.find((doctor) => doctor.id === id);
+        setDoctorData(doctor);
+      },
+    });
+  }, [id]);
+
+  if (!doctorData) {
+    return <p>Loading...</p>; 
+  }
+
+  const { name, gender, qualification, specialization } = doctorData;
 
   return (
     <div>
       <Header />
       <div className="doctor-profile-container">
-
         <div className="left-section">
           <img
-            src={gender === 'male' ? male : female}
+            src={gender === 'M' ? male : female}
             alt={`${name}'s profile`}
           />
           <div>
             <h2>{name}</h2>
-            <p>{degrees.join(', ')}</p>
+            <p>{qualification}</p>
           </div>
         </div>
-
         <div className="right-section">
           <h2>{name}</h2>
           <p><strong>Specialization:</strong> {specialization}</p>
-          <p><strong>Contact:</strong> {contact}</p>
-          <p><strong>Office Address:</strong> {officeAddress}</p>
-          <p><strong>Official Website:</strong> {website}</p>
-
+          <p><strong>Contact:</strong> 123-456-7890</p>
+          <p><strong>Office Address:</strong> 123 Medical Street, Cityville</p>
+          <p><strong>Website:</strong> www.doctor.com</p>
           <div className="social-profiles">
             <FaFacebook />
-            <FaXTwitter />
+            <FaTwitter />
             <FaLinkedin />
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );
 };
 
-export default doctors_profile;
+export default DoctorsProfile;
