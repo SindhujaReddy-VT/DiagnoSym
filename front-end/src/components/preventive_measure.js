@@ -39,11 +39,7 @@ const PreventiveMeasure = () => {
   return (
     <div>
       <Header />
-      <div className='prev-nex-buttons'>
-        <button>
-          <Link to="/doctors_profile" className="nav-link">Previous</Link>
-        </button>
-      </div>
+      
       <div className='preventive-measure-container'>
         <div className='page-heading'>
           Preventive Measures for Migraine
@@ -79,6 +75,11 @@ const PreventiveMeasure = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className='prev-nex-buttons'>
+        <button>
+          <Link to="/doctors_recommendation?disease=Migraine" className="nav-link">Previous</Link>
+        </button>
       </div>
       <Footer />
     </div>
