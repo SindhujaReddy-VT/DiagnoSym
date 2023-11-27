@@ -1,6 +1,7 @@
 // Feedback.jsx
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/feedback.css';
 import Footer from './footer';
 import Header from './header';
@@ -28,7 +29,9 @@ const Feedback = () => {
   const handleChange = (e) => {
     setFeedbackContent(e.target.value);
   };
-
+  const handleClear = () => {
+    setFeedbackContent('');
+  };
   const handleSubmit = () => {
     const username = window.localStorage.getItem("username");
     const postApiUrl = `http://127.0.0.1:8000/feedback/post/${username}/`;
@@ -85,8 +88,8 @@ const Feedback = () => {
         ) : (
           <button type="button" disabled style={{ opacity: 0.5 }}>Submit</button>
         )}
-          <button type="button">Cancel</button>
-          <button type="button">Clear</button>
+          <Link to='/home'><button type="button">Cancel</button></Link>
+          <button type="button" onClick={handleClear}>Clear</button>
         </div>
         <div className='comments'>
           <span className='commnt-text'>All Comments:</span>

@@ -53,7 +53,7 @@ export default function SignUp() {
       }}
     >
       <Header2 />
-      <div className="main-container">
+      <div className="main-container-login">
         <div className="login-container">
           <div className="auth-form">
             <form onSubmit={handleSubmit}>
