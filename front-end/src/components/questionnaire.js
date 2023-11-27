@@ -69,9 +69,9 @@ function Questionnaire() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(dataToSend),
-            
+
         })
-        
+
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -89,11 +89,11 @@ function Questionnaire() {
         window.location.href = "./prediction";
     };
 
-    return (
+    return (<div>
+        <Header />
+
         <div className="questionnaire">
-            <Header />
             <div className="main-container">
-                <div className="row">
                     <div className="sidebar">
                         <ul className="question-list">
                             {questions.map((question, index) => (
@@ -157,10 +157,11 @@ function Questionnaire() {
                             {isSubmitted && <div>Form Submitted!</div>}
                         </div>
                     </div>
-                </div>
             </div>
-            <Footer />
         </div>
+        <Footer />
+    </div>
+
     );
 }
 
