@@ -1,3 +1,5 @@
+// Feedback.jsx
+
 import React, { useState, useEffect } from 'react';
 import '../css/feedback.css';
 import Footer from './footer';
@@ -14,13 +16,14 @@ const Feedback = () => {
   const [feedbackContent, setFeedbackContent] = useState('');
 
   useEffect(() => {
-    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-    setReviews(storedReviews);
-  }, []);
+    const username = window.localStorage.getItem("username");
+    const getApiUrl = `http://127.0.0.1:8000/feedback/user/${username}/`;
 
-  useEffect(() => {
-    window.localStorage.setItem('reviews', JSON.stringify(reviews));
-  }, [reviews]);
+    fetch(getApiUrl)
+      .then(response => response.json())
+      .then(data => setReviews(data))
+      .catch(error => console.error('Error fetching reviews:', error));
+  }, []);
 
   const handleChange = (e) => {
     setFeedbackContent(e.target.value);
@@ -28,9 +31,9 @@ const Feedback = () => {
 
   const handleSubmit = () => {
     const username = window.localStorage.getItem("username");
-    const apiUrl = `http://127.0.0.1:8000/feedback/user/${username}/`;
-    console.log('API URL:', apiUrl);
-    fetch(apiUrl, {
+    const postApiUrl = `http://127.0.0.1:8000/feedback/post/${username}/`;
+
+    fetch(postApiUrl, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +69,7 @@ const Feedback = () => {
 
           {/* Right Div */}
           <div className="feedback-card">
-            <p>Is there anything would you like to suggest us to improve the experience of our users</p>
+            <p>Is there anything you would like to suggest us to improve the experience of our users?</p>
             <textarea
               className='cmt'
               placeholder="Write your Feedback....."
@@ -77,7 +80,11 @@ const Feedback = () => {
           </div>
         </div>
         <div className='sub-canc-clr'>
+            {window.localStorage.loggedIn ? (
           <button type="button" onClick={handleSubmit}>Submit</button>
+        ) : (
+          <button type="button" disabled style={{ opacity: 0.5 }}>Submit</button>
+        )}
           <button type="button">Cancel</button>
           <button type="button">Clear</button>
         </div>
@@ -88,7 +95,7 @@ const Feedback = () => {
               <div className='usr'>
                 <CgProfile size={25} />
                 <span className='profile-usr'>
-                Test
+                  {review.author_first_name} {review.author_last_name}
                 </span>
               </div>
               <p>{review.content}</p>

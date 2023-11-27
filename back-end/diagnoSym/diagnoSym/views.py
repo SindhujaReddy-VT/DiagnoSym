@@ -113,17 +113,15 @@ def update_user_details(request, username):
         else:
             return Response({'message': 'User not found'}, status=404)
              
-@api_view(['GET', 'POST'])
-def feedback(request, username=None):
-    if request.method == 'GET':
-        if username:
-            user = User.objects.filter(username=username).first()
-            reviews = Review.objects.filter(author=user)
-        else:
-            reviews = Review.objects.all()
-        serializer = ReviewSerializer(reviews, many=True)
-        return Response(serializer.data)
-    elif request.method == 'POST':
+@api_view(['GET'])
+def get_reviews(request, username=None):
+    reviews = Review.objects.all()
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def post_review(request, username=None):
+    if request.method == 'POST':
         user = User.objects.filter(username=username).first()
         content = request.data.get('content', '')
         review = Review.objects.create(author=user, content=content)

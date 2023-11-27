@@ -26,5 +26,6 @@ urlpatterns = [
     path('prediction/', views.disease_prediction, name='disease_prediction'),
     path('user/details/<str:username>/', views.get_user_details, name='user_edit'),
     path('user/update/<str:username>/', views.update_user_details, name='update_user_details'),
-    path('feedback/user/<str:username>/', views.feedback, name='feedback'),
+    path('feedback/user/<str:username>/', views.get_reviews, name='get_reviews'),
+    path('feedback/post/<str:username>/', views.post_review, name='post_review'),
 ]
