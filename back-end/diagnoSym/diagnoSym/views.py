@@ -2,9 +2,12 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import JsonResponse
 from .serializers import UserSerializers, ReviewSerializer 
-from .models import User, Symptoms, Prediction, Review
+from .models import User, Prediction, Review
 from rest_framework.response import Response
 import json
+
+# Global variable to store the symptoms given by user so that predictions api could use it
+symptoms_data = {}
 
 @api_view(['POST'])
 def register(request):
@@ -31,23 +34,21 @@ def login(request):
         
 @api_view(['POST'])
 def process_questionnaire(request):
+    global symptoms_data
     if request.method == 'POST':
         data = json.loads(request.body)
-        print(data)
         username = data.get('user')
         if username:
             user = User.objects.filter(username=username).first()
             if user is not None:
-                user_id = user.id
                 symptoms_to_create = []
                 for key, value in data.items():
                     if key != 'user':  
                         modified_key = key.split('.)', 1)[1].rstrip('?').strip()
-                        print(modified_key)
-                        modified_value = 1 if value == 'Yes' else 0
-                        symptom = Symptoms(user_id=user_id, symptom=modified_key, value=modified_value)
-                        symptoms_to_create.append(symptom)
-                Symptoms.objects.bulk_create(symptoms_to_create)
+                        modified_value = 1 if value == 'yes' else 0
+                        symptoms_to_create.append({'name': modified_key, 'value': modified_value})
+                request.symptoms_data = symptoms_to_create
+                symptoms_data = symptoms_to_create
                 return JsonResponse({'message': 'Data received and processed successfully'})
             else:
                 return JsonResponse({'error': 'User not found for the provided email'}, status=404)
@@ -55,7 +56,7 @@ def process_questionnaire(request):
             return JsonResponse({'error': 'User email not provided'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)
-
+    
 @api_view(['GET'])
 def disease_prediction(request):
     if request.method == 'GET':
@@ -113,17 +114,15 @@ def update_user_details(request, username):
         else:
             return Response({'message': 'User not found'}, status=404)
              
-@api_view(['GET', 'POST'])
-def feedback(request, username=None):
-    if request.method == 'GET':
-        if username:
-            user = User.objects.filter(username=username).first()
-            reviews = Review.objects.filter(author=user)
-        else:
-            reviews = Review.objects.all()
-        serializer = ReviewSerializer(reviews, many=True)
-        return Response(serializer.data)
-    elif request.method == 'POST':
+@api_view(['GET'])
+def get_reviews(request, username=None):
+    reviews = Review.objects.all()
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def post_review(request, username=None):
+    if request.method == 'POST':
         user = User.objects.filter(username=username).first()
         content = request.data.get('content', '')
         review = Review.objects.create(author=user, content=content)

@@ -10,11 +10,6 @@ class User(models.Model):
     password = models.CharField(max_length=60)
     date_of_birth = models.DateField(default=date(2000, 1, 1))
 
-class Symptoms(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE) 
-    symptom = models.CharField(max_length=100)
-    value = models.IntegerField(default=0)
-
 class Prediction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) 
     disease = models.CharField(max_length=150)
