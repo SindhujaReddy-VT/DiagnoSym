@@ -13,6 +13,7 @@ import Main from "./components/main";
 import DoctorsRecommendation from "./components/doctors_recommendation";
 import DoctorsProfile from "./components/doctors_profile";
 import Preventive from "./components/preventive_measure";
+import PastRecords from "./components/past_records";
 
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
@@ -38,6 +39,7 @@ function App() {
           <Route path="/doctors_recommendation" element={<DoctorsRecommendation />} />
           <Route path="/doctors_profile/:id" element={<DoctorsProfile />} />
           <Route path="/preventive_measure" element={<Preventive />} />
+          <Route path="/past_records" element={<PastRecords />} />
         </Routes>
       </div>
     </Router>

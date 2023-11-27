@@ -1,0 +1,67 @@
+.hist{
+    margin: 2rem;
+}
+.grid-history {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px;
+  }
+.history-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    padding: 16px;
+    max-width: fit-content;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .delete-icon {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #ff4d4f;
+    cursor: pointer;
+  }
+  
+  .card-content span {
+    font-weight: bold;
+    color: #007BFF;
+  }
+  .history-msg{
+    font-style: italic;
+    text-align: center;
+    font-size: larger;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+  
+  .clear-all-btn,
+  .save-btn {
+    background-color: #630031;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .clear-all-btn:hover,
+  .save-btn:hover {
+    background-color: #CF4420;
+  }
+  

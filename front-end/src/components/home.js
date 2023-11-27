@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import '../css/home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -18,22 +19,22 @@ const Home = () => {
   const images = [
     slide1, slide2
   ]; // Replace with your image file paths
-  
-  
-    const [currentSlide, setCurrentSlide] = useState(0);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        // Increment the current slide, and loop back to the first slide if at the end
-        setCurrentSlide((currentSlide + 1) % images.length);
-      }, 3000); // Change the interval (in milliseconds) to control the slideshow speed
-  
-      return () => {
-        // Clean up the interval when the component unmounts
-        clearInterval(interval);
-      };
-    }, [currentSlide, images.length]);
-    
+
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Increment the current slide, and loop back to the first slide if at the end
+      setCurrentSlide((currentSlide + 1) % images.length);
+    }, 3000); // Change the interval (in milliseconds) to control the slideshow speed
+
+    return () => {
+      // Clean up the interval when the component unmounts
+      clearInterval(interval);
+    };
+  }, [currentSlide, images.length]);
+
 
   return (
     <div>
@@ -53,9 +54,9 @@ const Home = () => {
         <h3 class="title-services">Services and Solutions</h3>
         <div class="grid-services">
           <div class="item">
-            <img class="questionnaire" src={questionnaire} alt="questionnaire" />
-            <span class="box-title">Symptoms Questionnaire</span>
-            <span class="box-text">Users who want to diagnose themselves can fill up & submit the symptoms questionnaire</span>
+              <img class="questionnaire" src={questionnaire} alt="questionnaire" />
+              <Link to='/questionnaire' className='no-decor'><span class="box-title">Symptoms Questionnaire</span></Link>
+              <span class="box-text">Users who want to diagnose themselves can fill up & submit the symptoms questionnaire</span>
           </div>
           <div class="item">
             <img class="results" src={results} alt="results" />
@@ -76,12 +77,12 @@ const Home = () => {
           </div>
           <div class="item">
             <img class="precautions" src={precautions} alt="precautions" />
-            <span class="box-title">Precautions</span>
+            <Link to='/precautions' className='no-decor'><span class="box-title">Precautions</span></Link>
             <span class="box-text">Our customers can always stop by to know about the precautions that one can take for a set of diseases</span>
           </div>
           <div class="item">
             <img class="past_records" src={past_records} alt="past_records" />
-            <span class="box-title">Past Diagnosis Records</span>
+            <Link to='/past_records' className='no-decor'><span class="box-title">Past Diagnosis Records</span></Link>
             <span class="box-text">Our App users can always view or discard their latest diagnosis records</span>
           </div>
         </div>
