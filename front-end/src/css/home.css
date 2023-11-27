@@ -68,6 +68,8 @@
     font-size: large;
     font-weight: 600;
     color:#630031;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .box-text {
@@ -115,4 +117,7 @@
 
 .process-text span {
     color: white;
+}
+.no-decor{
+    text-decoration: none;
 }

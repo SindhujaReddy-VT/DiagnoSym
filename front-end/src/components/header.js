@@ -6,6 +6,7 @@ import { BsFillPersonFill } from 'react-icons/bs';
 import { IoMdHelpCircle } from 'react-icons/io';
 import { FaSignOutAlt } from 'react-icons/fa';
 import {  PiStethoscopeBold } from 'react-icons/pi';
+import { PiFilesFill } from "react-icons/pi";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -56,6 +57,11 @@ const Header = () => {
                 <li>
                   <Link to="/user-details" className="nav-drop-link">
                     <BsFillPersonFill /> My Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/past_records" className="nav-drop-link">
+                  <PiFilesFill /> Past Records
                   </Link>
                 </li>
                 <li>
