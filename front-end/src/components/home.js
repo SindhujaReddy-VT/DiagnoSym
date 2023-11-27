@@ -33,6 +33,7 @@ const Home = () => {
         clearInterval(interval);
       };
     }, [currentSlide, images.length]);
+    
 
   return (
     <div>
