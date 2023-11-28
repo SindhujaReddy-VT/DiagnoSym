@@ -58,10 +58,10 @@ const DoctorsRecommendation = () => {
 
       <div className='prev-nex-buttons'>
         <button>
-          <Link to="/prediction" className="nav-link">Previous</Link>
+          <Link to={`/prediction?disease=${disease}`} className="nav-link">Previous</Link>
         </button>
         <button>
-          <Link to="/preventive_measure" className="nav-link">Next</Link>
+          <Link to={`/preventive_measure?disease=${disease}`} className="nav-link">Next</Link>
         </button>
       </div>
       <Footer />

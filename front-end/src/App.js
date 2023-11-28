@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from "./components/login_component";
 import SignUp from "./components/signup_component";
 import Home from "./components/home";
@@ -30,10 +30,10 @@ function App() {
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/home" element = {<Home/>} />
-          <Route path="/questionnaire" element = {<Questionnaire/>} />
+          <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/prediction/:disease/:accuracy" element={<Prediction />} />
           <Route path="/user-details" element={<UserDetails />} />
           <Route path="/precautions" element={<Precautions />} />
-          <Route path="/prediction" element={<Prediction />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/main" element={<Main />} />
           <Route path="/doctors_recommendation" element={<DoctorsRecommendation />} />

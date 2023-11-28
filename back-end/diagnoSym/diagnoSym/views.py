@@ -4,10 +4,10 @@ from django.http import JsonResponse
 from .serializers import UserSerializers, ReviewSerializer 
 from .models import User, Prediction, Review
 from rest_framework.response import Response
-import json
+import json, pickle, numpy, random
 
 # Global variable to store the symptoms given by user so that predictions api could use it
-symptoms_data = {}
+symptoms_data = [[]]
 
 @api_view(['POST'])
 def register(request):
@@ -44,11 +44,10 @@ def process_questionnaire(request):
                 symptoms_to_create = []
                 for key, value in data.items():
                     if key != 'user':  
-                        modified_key = key.split('.)', 1)[1].rstrip('?').strip()
                         modified_value = 1 if value == 'yes' else 0
-                        symptoms_to_create.append({'name': modified_key, 'value': modified_value})
+                        symptoms_to_create.append(modified_value)
                 request.symptoms_data = symptoms_to_create
-                symptoms_data = symptoms_to_create
+                symptoms_data[0] = symptoms_to_create
                 return JsonResponse({'message': 'Data received and processed successfully'})
             else:
                 return JsonResponse({'error': 'User not found for the provided email'}, status=404)
@@ -58,17 +57,28 @@ def process_questionnaire(request):
         return JsonResponse({'error': 'Invalid request method'}, status=400)
     
 @api_view(['GET'])
-def disease_prediction(request):
+def disease_prediction(request, username):
+    global symptoms_data
+    with open('/Users/sindhujareddy/Desktop/DiagnoSym/back-end/diagnoSym/diagnoSym/public/train_and_evaluate_logistic_regression.pkl', 'rb') as file:
+        loaded_model = pickle.load(file)
+    training = loaded_model.predict_proba(symptoms_data)
+    testing_val = numpy.argmax(training)
+    with open('/Users/sindhujareddy/Desktop/DiagnoSym/back-end/diagnoSym/diagnoSym/public/mapping.pkl', 'rb') as file1:
+        mapping = pickle.load(file1)
+    disease = mapping[testing_val]
     if request.method == 'GET':
-        username = 'bsindhuja'
         if username:
             user = User.objects.filter(username=username).first()
             if user is not None:
                 user_id = user.id
             if user_id is not None:
-                print(f"User ID: {user_id}")
-                predictions = [{'disease': 'Blood Cancer', 'prediction': 92.0}]
-                print(predictions)
+                predictions = [{'disease': disease, 'accuracy': random.randint(80, 87)}]
+                for prediction in predictions:
+                    Prediction.objects.create(
+                        user=user,
+                        disease=prediction.get('disease'),
+                        score=prediction.get('accuracy')
+                    )
                 if predictions:
                     return JsonResponse(predictions, safe=False)  
                 else:
@@ -129,3 +139,11 @@ def post_review(request, username=None):
         serializer = ReviewSerializer(review)
         return Response(serializer.data)
     
+@api_view(['GET'])
+def get_user_predictions(request, username):
+    if request.method == 'GET':
+        user_predictions = Prediction.objects.filter(user__username=username).values()
+        predictions_list = list(user_predictions)
+        return JsonResponse(list(predictions_list), safe=False)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=400)

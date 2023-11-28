@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Papa from 'papaparse'; // Make sure to import Papa from 'papaparse'
 
 import '../css/preventive_measure.css';
@@ -9,6 +9,9 @@ import Footer from '../components/footer';
 const PreventiveMeasure = () => {
   const [expandedSection, setExpandedSection] = useState(null);
   const [data, setData] = useState([]);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const disease = queryParams.get('disease');
 
   const predefinedSections = [
     'Lifestyle Recommendations',
@@ -24,10 +27,9 @@ const PreventiveMeasure = () => {
       download: true,
       complete: (result) => {
         console.log('Parsed CSV data:', result.data); // Log the entire parsed data
-        // Filter data for disease="Migraine"
-        const migraineData = result.data.filter((item) => item.Disease === 'Migraine');
-        console.log('Filtered Migraine Data:', migraineData); // Log the filtered data
-        setData(migraineData);
+        const diseaseData = result.data.filter((item) => item.Disease === disease);
+        console.log('Filtered Disease Data:', diseaseData); // Log the filtered data
+        setData(diseaseData);
       },
     });
   }, []); // Run the effect only once on mount
@@ -42,7 +44,7 @@ const PreventiveMeasure = () => {
       
       <div className='preventive-measure-container'>
         <div className='page-heading'>
-          Preventive Measures for Migraine
+          Preventive Measures for {disease}
         </div>
         <p className='disclaimer'>
           <em>Disclaimer:</em> Taking steps to prevent health issues or manage existing conditions is crucial. Keep in mind that the suggestions provided are general guidelines, and for personalized advice and treatment plans tailored to your specific health needs, it's essential to consult with healthcare professionals. They can offer insights and recommendations based on your unique circumstances to ensure the most effective and suitable care for you.
@@ -78,7 +80,7 @@ const PreventiveMeasure = () => {
       </div>
       <div className='prev-nex-buttons'>
         <button>
-          <Link to="/doctors_recommendation?disease=Migraine" className="nav-link">Previous</Link>
+          <Link to={`/doctors_recommendation?disease=${disease}`}className="nav-link">Previous</Link>
         </button>
       </div>
       <Footer />

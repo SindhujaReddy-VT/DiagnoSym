@@ -69,9 +69,7 @@ function Questionnaire() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(dataToSend),
-
         })
-
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -80,15 +78,26 @@ function Questionnaire() {
             })
             .then((data) => {
                 console.log(data);
+                return fetch(`http://127.0.0.1:8000/prediction/${window.localStorage.getItem('username')}`);
+            })
+            .then((predictionResponse) => {
+                if (!predictionResponse.ok) {
+                    throw new Error('Prediction API response was not ok');
+                }
+                return predictionResponse.json();
+            })
+            .then((predictionData) => {
+                console.log(predictionData);
+                const { disease, accuracy } = predictionData[0];
+                window.location.href = `./prediction/${encodeURIComponent(disease)}/${encodeURIComponent(accuracy)}`;
             })
             .catch((error) => {
                 console.error(error);
             });
-
+    
         setIsSubmitted(true);
-        window.location.href = "./prediction";
     };
-
+    
     return (<div>
         <Header />
 
