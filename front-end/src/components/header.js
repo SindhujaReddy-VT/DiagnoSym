@@ -9,6 +9,7 @@ import {  PiStethoscopeBold } from 'react-icons/pi';
 import { PiFilesFill } from "react-icons/pi";
 
 const Header = () => {
+  const username = window.localStorage.getItem('username')
   const navigate = useNavigate();
   const handleSignOut = () => {
     localStorage.clear();
@@ -60,7 +61,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/past_records" className="nav-drop-link">
+                  <Link to={`/api/past_records/${username}/`} className="nav-drop-link">
                   <PiFilesFill /> Past Records
                   </Link>
                 </li>

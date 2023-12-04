@@ -15,7 +15,10 @@ import our_process from '../images/our_process.png';
 
 
 
+
+
 const Home = () => {
+  const username = window.localStorage.getItem('username')
   const images = [
     slide1, slide2
   ]; // Replace with your image file paths
@@ -54,9 +57,9 @@ const Home = () => {
         <h3 class="title-services">Services and Solutions</h3>
         <div class="grid-services">
           <div class="item">
-              <img class="questionnaire" src={questionnaire} alt="questionnaire" />
-              <Link to='/questionnaire' className='no-decor'><span class="box-title">Symptoms Questionnaire</span></Link>
-              <span class="box-text">Users who want to diagnose themselves can fill up & submit the symptoms questionnaire</span>
+            <img class="questionnaire" src={questionnaire} alt="questionnaire" />
+            <Link to='/questionnaire' className='no-decor'><span class="box-title">Symptoms Questionnaire</span></Link>
+            <span class="box-text">Users who want to diagnose themselves can fill up & submit the symptoms questionnaire</span>
           </div>
           <div class="item">
             <img class="results" src={results} alt="results" />
@@ -82,7 +85,9 @@ const Home = () => {
           </div>
           <div class="item">
             <img class="past_records" src={past_records} alt="past_records" />
-            <Link to='/past_records' className='no-decor'><span class="box-title">Past Diagnosis Records</span></Link>
+            <Link to={`/api/past_records/${username}/`} className='no-decor'>
+              <span className="box-title">Past Diagnosis Records</span>
+            </Link>
             <span class="box-text">Our App users can always view or discard their latest diagnosis records</span>
           </div>
         </div>

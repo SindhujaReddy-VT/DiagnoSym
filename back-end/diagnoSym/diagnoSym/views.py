@@ -5,6 +5,8 @@ from .serializers import UserSerializers, ReviewSerializer
 from .models import User, Prediction, Review
 from rest_framework.response import Response
 import json, pickle, numpy, random
+from django.shortcuts import get_object_or_404
+
 
 # Global variable to store the symptoms given by user so that predictions api could use it
 symptoms_data = [[]]
@@ -59,11 +61,11 @@ def process_questionnaire(request):
 @api_view(['GET'])
 def disease_prediction(request, username):
     global symptoms_data
-    with open('/Users/sindhujareddy/Desktop/DiagnoSym/back-end/diagnoSym/diagnoSym/public/train_and_evaluate_logistic_regression.pkl', 'rb') as file:
+    with open('/Users/yuva/Desktop/DiagnoSym 2/back-end/diagnoSym/diagnoSym/public/train_and_evaluate_logistic_regression.pkl', 'rb') as file:
         loaded_model = pickle.load(file)
     training = loaded_model.predict_proba(symptoms_data)
     testing_val = numpy.argmax(training)
-    with open('/Users/sindhujareddy/Desktop/DiagnoSym/back-end/diagnoSym/diagnoSym/public/mapping.pkl', 'rb') as file1:
+    with open('/Users/yuva/Desktop/DiagnoSym 2/back-end/diagnoSym/diagnoSym/public/mapping.pkl', 'rb') as file1:
         mapping = pickle.load(file1)
     disease = mapping[testing_val]
     if request.method == 'GET':
@@ -138,12 +140,35 @@ def post_review(request, username=None):
         review = Review.objects.create(author=user, content=content)
         serializer = ReviewSerializer(review)
         return Response(serializer.data)
+
+  
+# @api_view(['GET'])
+# def get_user_predictions(request, username):
+#     if request.method == 'GET':
+#         user_predictions = Prediction.objects.filter(user__username=username).values()
+#         predictions_list = list(user_predictions)
+#         return JsonResponse(list(predictions_list), safe=False)
+#     else:
+#         return JsonResponse({'error': 'Invalid request method'}, status=400)
     
-@api_view(['GET'])
-def get_user_predictions(request, username):
+
+
+from django.http import JsonResponse
+
+def get_past_records(request, username):
+    print("get_past_records view called")
     if request.method == 'GET':
-        user_predictions = Prediction.objects.filter(user__username=username).values()
-        predictions_list = list(user_predictions)
-        return JsonResponse(list(predictions_list), safe=False)
+        user = get_object_or_404(User, username=username)
+        predictions = Prediction.objects.filter(user_id=user.id)
+
+        past_records = [
+            {'id': prediction.id, 'disease': prediction.disease, 'accuracy': prediction.score}
+            for prediction in predictions
+        ]
+        
+        # Debugging information
+        print("Fetched past records successfully:", past_records)
+
+        return JsonResponse(past_records, safe=False)
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=400)

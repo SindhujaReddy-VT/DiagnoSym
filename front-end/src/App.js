@@ -39,7 +39,8 @@ function App() {
           <Route path="/doctors_recommendation" element={<DoctorsRecommendation />} />
           <Route path="/doctors_profile/:id" element={<DoctorsProfile />} />
           <Route path="/preventive_measure" element={<Preventive />} />
-          <Route path="/past_records" element={<PastRecords />} />
+          <Route path="/api/past_records/:username" element={<PastRecords />} />
+
         </Routes>
       </div>
     </Router>

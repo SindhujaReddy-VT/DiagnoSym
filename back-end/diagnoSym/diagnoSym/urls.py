@@ -28,5 +28,6 @@ urlpatterns = [
     path('user/update/<str:username>/', views.update_user_details, name='update_user_details'),
     path('feedback/user/<str:username>/', views.get_reviews, name='get_reviews'),
     path('feedback/post/<str:username>/', views.post_review, name='post_review'),
-    path('api/user_predictions/<str:username>/', views.get_user_predictions, name='get_user_predictions'),
+    path('api/past_records/<str:username>/', views.get_past_records, name='get_past_records'),
+
 ]
