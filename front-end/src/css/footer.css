@@ -31,8 +31,9 @@ footer {
 .social-media-icons {
     display: flex;
     gap: 1em;
-    
+
 }
-.social-media-icons-follow{
+
+.social-media-icons-follow {
     padding: 0.875rem;
 }

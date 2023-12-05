@@ -13,31 +13,21 @@ import questionnaire from '../images/questionnaire.png';
 import results from '../images/results.png';
 import our_process from '../images/our_process.png';
 
-
-
-
-
 const Home = () => {
   const username = window.localStorage.getItem('username')
   const images = [
     slide1, slide2
-  ]; // Replace with your image file paths
-
-
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Increment the current slide, and loop back to the first slide if at the end
       setCurrentSlide((currentSlide + 1) % images.length);
-    }, 3000); // Change the interval (in milliseconds) to control the slideshow speed
-
+    }, 3000);
     return () => {
-      // Clean up the interval when the component unmounts
       clearInterval(interval);
     };
   }, [currentSlide, images.length]);
-
 
   return (
     <div>

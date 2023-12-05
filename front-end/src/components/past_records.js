@@ -8,11 +8,9 @@ const PastRecords = () => {
     const [records, setRecords] = useState([]);
 
     const handleDelete = (id) => {
-        // Implement delete logic here
     };
 
     const handleSave = () => {
-        // Implement save logic here
     };
 
     const handleClearAll = () => {
@@ -23,16 +21,10 @@ const PastRecords = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(`http://127.0.0.1:8000/api/past_records/${username}`);
-                
-                // Debugging information
                 console.log('Raw response:', response);
-    
-                // Check if the response status is OK (200)
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-    
-                // Attempt to parse JSON, handle error if not JSON
                 const data = await response.json();
                 console.log('Parsed JSON data:', data);
                 setRecords(data);
@@ -40,13 +32,12 @@ const PastRecords = () => {
                 console.error('Error fetching past records:', error);
             }
         };
-    
-        // Call the fetchData function when the component mounts
+
         fetchData();
     }, [username]);
-    
-  
-  
+
+
+
     return (
         <div>
             <Header />

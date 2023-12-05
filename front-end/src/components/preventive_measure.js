@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Papa from 'papaparse'; // Make sure to import Papa from 'papaparse'
-
+import Papa from 'papaparse';
 import '../css/preventive_measure.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -21,18 +20,17 @@ const PreventiveMeasure = () => {
   ];
 
   useEffect(() => {
-    // Load CSV data
     Papa.parse('/preventive_measures.csv', {
       header: true,
       download: true,
       complete: (result) => {
-        console.log('Parsed CSV data:', result.data); // Log the entire parsed data
+        console.log('Parsed CSV data:', result.data);
         const diseaseData = result.data.filter((item) => item.Disease === disease);
-        console.log('Filtered Disease Data:', diseaseData); // Log the filtered data
+        console.log('Filtered Disease Data:', diseaseData);
         setData(diseaseData);
       },
     });
-  }, []); // Run the effect only once on mount
+  }, []);
 
   const toggleSection = (section) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -41,7 +39,7 @@ const PreventiveMeasure = () => {
   return (
     <div>
       <Header />
-      
+
       <div className='preventive-measure-container'>
         <div className='page-heading'>
           Preventive Measures for {disease}
@@ -80,7 +78,7 @@ const PreventiveMeasure = () => {
       </div>
       <div className='prev-nex-buttons'>
         <button>
-          <Link to={`/doctors_recommendation?disease=${disease}`}className="nav-link">Previous</Link>
+          <Link to={`/doctors_recommendation?disease=${disease}`} className="nav-link">Previous</Link>
         </button>
       </div>
       <Footer />

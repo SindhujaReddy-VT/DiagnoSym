@@ -26,7 +26,7 @@ const DoctorsProfile = () => {
   }, [id]);
 
   if (!doctorData) {
-    return <p>Loading...</p>; 
+    return <p>Loading...</p>;
   }
 
   const { name, gender, qualification, specialization } = doctorData;

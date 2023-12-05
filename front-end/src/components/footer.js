@@ -4,7 +4,6 @@ import { AiFillGithub } from 'react-icons/ai';
 import { AiFillYoutube } from 'react-icons/ai';
 import { RiTwitterXFill } from 'react-icons/ri';
 
-
 const Footer = () => {
     return (
         <div>

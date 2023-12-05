@@ -1,56 +1,56 @@
-/* doctors_recommendation.css */
-
 .doctor-profile-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    height: 81vh;
-  }
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 81vh;
+}
 
-  .left-section {
-    text-align: center;
-  }
-  
-  .left-section img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    margin-top: 200px;
-  }
-  
-  .left-section h2 {
-    margin: 0;
-  }
+.left-section {
+  text-align: center;
+}
 
-  .right-section {
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .right-section h2 {
-    color: #333;
-  }
-  
-  .right-section p {
-    margin: 8px 0;
-  }
-  
-  .social-profiles {
-    display: flex;
-    gap: 2em;
-    font-size: large;
-    margin-top: 1em;;
+.left-section img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: 200px;
+}
 
-  }
-  
-  p strong{
-    color:#630031;
-    font-size: large;
-    font-weight: 800;
-  }
-  p{
-    font-weight: 200;
-  }
+.left-section h2 {
+  margin: 0;
+}
+
+.right-section {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-section h2 {
+  color: #333;
+}
+
+.right-section p {
+  margin: 8px 0;
+}
+
+.social-profiles {
+  display: flex;
+  gap: 2em;
+  font-size: large;
+  margin-top: 1em;
+  ;
+
+}
+
+p strong {
+  color: #630031;
+  font-size: large;
+  font-weight: 800;
+}
+
+p {
+  font-weight: 200;
+}

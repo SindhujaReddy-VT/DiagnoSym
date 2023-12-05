@@ -1,5 +1,3 @@
-// Feedback.jsx
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/feedback.css';
@@ -51,7 +49,7 @@ const Feedback = () => {
       })
       .catch(error => console.error('Error submitting feedback:', error));
   };
-  
+
   const iconSize = '2em';
   return (
     <div>
@@ -83,11 +81,11 @@ const Feedback = () => {
           </div>
         </div>
         <div className='sub-canc-clr'>
-            {window.localStorage.loggedIn ? (
-          <button type="button" onClick={handleSubmit}>Submit</button>
-        ) : (
-          <button type="button" disabled style={{ opacity: 0.5 }}>Submit</button>
-        )}
+          {window.localStorage.loggedIn ? (
+            <button type="button" onClick={handleSubmit}>Submit</button>
+          ) : (
+            <button type="button" disabled style={{ opacity: 0.5 }}>Submit</button>
+          )}
           <Link to='/home'><button type="button">Cancel</button></Link>
           <button type="button" onClick={handleClear}>Clear</button>
         </div>

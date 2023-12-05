@@ -170,7 +170,7 @@ const Precautions = () => {
         {
             id: 13,
             name: "Gastroenteritis",
-            image:gastroenteritis,
+            image: gastroenteritis,
             description: "Gastroenteritis is an inflammation of the stomach and intestines, often caused by viral or bacterial infections, resulting in diarrhea and vomiting.",
             symptoms: ["Diarrhea", "Vomiting", "Abdominal cramps"],
             precautions: [

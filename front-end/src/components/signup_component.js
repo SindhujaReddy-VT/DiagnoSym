@@ -132,7 +132,7 @@ export default function SignUp() {
               </p>
             </form>
           </div>
-        </div> 
+        </div>
       </div>
       <Footer />
     </div>

@@ -1,9 +1,8 @@
-.main-container{
+.main-container {
   display: flex;
   justify-content: space-between;
-  margin-left:  0;
+  margin-left: 0;
 }
-
 
 .questionnaire {
   display: flex;
@@ -17,8 +16,7 @@
 }
 
 .question-title h5 {
-margin-top:10px;
-
+  margin-top: 10px;
 }
 
 .sidebar {
@@ -34,7 +32,7 @@ margin-top:10px;
   border: 2px solid #630031;
   width: 400px;
   height: 700px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -43,7 +41,7 @@ margin-top:10px;
   padding: 5px;
   border: 1px solid #ddd;
   margin: 5px 0;
-  color:black;
+  color: black;
 }
 
 .question-list li.selected {
@@ -57,22 +55,22 @@ margin-top:10px;
 }
 
 .question {
-  width:45%;
-  height:30%;
+  width: 45%;
+  height: 30%;
   background-color: #fff;
   padding: 20px;
   border: 2px solid #630031;
-  margin:10rem;
-  margin-top:15rem;
+  margin: 10rem;
+  margin-top: 15rem;
   margin-left: 20rem;
   color: black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  color:black;
+  color: black;
 }
 
 input[type="radio"] {
@@ -117,7 +115,8 @@ input[type="submit"]:hover {
   overflow-y: auto;
   text-align: justify;
 }
-.button-form{
+
+.button-form {
   background-color: #630031;
   border: none;
   color: white;
@@ -127,5 +126,5 @@ input[type="submit"]:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  margin-top:10px;
+  margin-top: 10px;
 }

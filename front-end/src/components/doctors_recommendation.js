@@ -9,7 +9,7 @@ import female from '../images/female_doctor.jpeg';
 
 const DoctorsRecommendation = () => {
   const [doctors, setDoctors] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const disease = queryParams.get('disease');
@@ -23,7 +23,7 @@ const DoctorsRecommendation = () => {
       complete: (result) => {
         const filteredDoctors = result.data.filter((doctor) => doctor.disease === disease);
         setDoctors(filteredDoctors);
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false);
       },
     });
   }, [disease]);

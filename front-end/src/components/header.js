@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { IoMdHelpCircle } from 'react-icons/io';
 import { FaSignOutAlt } from 'react-icons/fa';
-import {  PiStethoscopeBold } from 'react-icons/pi';
+import { PiStethoscopeBold } from 'react-icons/pi';
 import { PiFilesFill } from "react-icons/pi";
 
 const Header = () => {
@@ -62,11 +62,8 @@ const Header = () => {
                 </li>
                 <li>
                   <Link to={`/api/past_records/${username}/`} className="nav-drop-link">
-                  <PiFilesFill /> Past Records
+                    <PiFilesFill /> Past Records
                   </Link>
-                </li>
-                <li>
-                  <IoMdHelpCircle /> Help
                 </li>
                 <li onClick={handleSignOut}>
                   <FaSignOutAlt /> Sign Out

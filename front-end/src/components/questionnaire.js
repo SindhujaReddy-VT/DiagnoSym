@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/questionnaire.css'; // Import your custom CSS file
+import '../css/questionnaire.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -94,78 +94,78 @@ function Questionnaire() {
             .catch((error) => {
                 console.error(error);
             });
-    
+
         setIsSubmitted(true);
     };
-    
+
     return (<div>
         <Header />
 
         <div className="questionnaire">
             <div className="main-container">
-                    <div className="sidebar">
-                        <ul className="question-list">
-                            {questions.map((question, index) => (
-                                <li
-                                    key={index}
-                                    className={`question-item ${selectedQuestion === index ? 'selected' : ''}`}
-                                    onClick={() => handleQuestionClick(index)}
-                                >
-                                    {question}
-                                </li>
-                            ))}
-                        </ul>
+                <div className="sidebar">
+                    <ul className="question-list">
+                        {questions.map((question, index) => (
+                            <li
+                                key={index}
+                                className={`question-item ${selectedQuestion === index ? 'selected' : ''}`}
+                                onClick={() => handleQuestionClick(index)}
+                            >
+                                {question}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="content">
+                    <div className="question">
+                        <h5 className="question-title">{questions[selectedQuestion]}</h5>
+                        <form onSubmit={handleFormSubmit}>
+                            <div className="form-check">
+                                <input
+                                    type="radio"
+                                    className="form-check-input"
+                                    id={`question_${selectedQuestion}_yes`}
+                                    value="Yes"
+                                    checked={answers[selectedQuestion] === 'Yes'}
+                                    onChange={handleAnswerChange}
+                                />
+                                <label className="form-check-label" htmlFor={`question_${selectedQuestion}_yes`}>
+                                    Yes
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input
+                                    type="radio"
+                                    className="form-check-input"
+                                    id={`question_${selectedQuestion}_no`}
+                                    value="No"
+                                    checked={answers[selectedQuestion] === 'No'}
+                                    onChange={handleAnswerChange}
+                                />
+                                <label className="form-check-label" htmlFor={`question_${selectedQuestion}_no`}>
+                                    No
+                                </label>
+                            </div>
+                            <div className="buttons">
+                                {selectedQuestion > 0 && (
+                                    <button type="button" className="button-form" onClick={handlePrevious}>
+                                        Previous
+                                    </button>
+                                )}
+                                {selectedQuestion === questions.length - 1 ? (
+                                    <button type="submit" className="button-form">
+                                        Submit
+                                    </button>
+                                ) : (
+                                    <button type="button" className="button-form" onClick={handleNext}>
+                                        Next
+                                    </button>
+                                )}
+                            </div>
+                        </form>
+                        {isSubmitted && <div>Form Submitted!</div>}
                     </div>
-                    <div className="content">
-                        <div className="question">
-                            <h5 className="question-title">{questions[selectedQuestion]}</h5>
-                            <form onSubmit={handleFormSubmit}>
-                                <div className="form-check">
-                                    <input
-                                        type="radio"
-                                        className="form-check-input"
-                                        id={`question_${selectedQuestion}_yes`}
-                                        value="Yes"
-                                        checked={answers[selectedQuestion] === 'Yes'}
-                                        onChange={handleAnswerChange}
-                                    />
-                                    <label className="form-check-label" htmlFor={`question_${selectedQuestion}_yes`}>
-                                        Yes
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input
-                                        type="radio"
-                                        className="form-check-input"
-                                        id={`question_${selectedQuestion}_no`}
-                                        value="No"
-                                        checked={answers[selectedQuestion] === 'No'}
-                                        onChange={handleAnswerChange}
-                                    />
-                                    <label className="form-check-label" htmlFor={`question_${selectedQuestion}_no`}>
-                                        No
-                                    </label>
-                                </div>
-                                <div className="buttons">
-                                    {selectedQuestion > 0 && (
-                                        <button type="button" className="button-form" onClick={handlePrevious}>
-                                            Previous
-                                        </button>
-                                    )}
-                                    {selectedQuestion === questions.length - 1 ? (
-                                        <button type="submit" className="button-form">
-                                            Submit
-                                        </button>
-                                    ) : (
-                                        <button type="button" className="button-form" onClick={handleNext}>
-                                            Next
-                                        </button>
-                                    )}
-                                </div>
-                            </form>
-                            {isSubmitted && <div>Form Submitted!</div>}
-                        </div>
-                    </div>
+                </div>
             </div>
         </div>
         <Footer />

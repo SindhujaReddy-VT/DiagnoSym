@@ -61,11 +61,11 @@ def process_questionnaire(request):
 @api_view(['GET'])
 def disease_prediction(request, username):
     global symptoms_data
-    with open('/Users/yuva/Desktop/DiagnoSym 2/back-end/diagnoSym/diagnoSym/public/train_and_evaluate_logistic_regression.pkl', 'rb') as file:
+    with open('/Users/yuva/Desktop/DiagnoSym/back-end/diagnoSym/diagnoSym/public/train_and_evaluate_logistic_regression.pkl', 'rb') as file:
         loaded_model = pickle.load(file)
     training = loaded_model.predict_proba(symptoms_data)
     testing_val = numpy.argmax(training)
-    with open('/Users/yuva/Desktop/DiagnoSym 2/back-end/diagnoSym/diagnoSym/public/mapping.pkl', 'rb') as file1:
+    with open('/Users/yuva/Desktop/DiagnoSym/back-end/diagnoSym/diagnoSym/public/mapping.pkl', 'rb') as file1:
         mapping = pickle.load(file1)
     disease = mapping[testing_val]
     if request.method == 'GET':

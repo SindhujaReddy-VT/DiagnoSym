@@ -5,7 +5,7 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import migraine from '../images/migrane.jpeg';
+import migraine from '../images/psoriasis.png';
 
 const Prediction = () => {
     const { disease, accuracy } = useParams();
@@ -40,7 +40,7 @@ const Prediction = () => {
                             }}
                         />
                     </div>
-                    <div className="score">Prediction Accuracy: {accuracyValue}%</div>
+                    <div className="score">Prediction Probability: {accuracyValue}%</div>
                 </div>
             </div>
 
@@ -48,10 +48,10 @@ const Prediction = () => {
                 <h3>Disease Description: </h3>
                 <p className="description">
                     <ul>
-                        <li>Recurrent, severe headaches</li>
-                        <li>Often one-sided, throbbing, and intense</li>
-                        <li>Accompanied by symptoms like nausea, vomiting, and sensitivity to light and sound</li>
-                        <li>May include an "aura" with visual disturbances; triggered by various factors</li>
+                        <li>Psoriasis is a chronic autoimmune skin disorder characterized by raised, red patches with silvery scales.</li>
+                        <li>It can affect various body parts, causing discomfort, itching, and changes in nails.</li>
+                        <li>Itching is common, and psoriasis may affect nails, causing pitting, discoloration, and thickening.</li>
+                        <li>Psoriasis can be triggered by factors like stress, medications, and infections.</li>
                     </ul>
                 </p>
             </div>
